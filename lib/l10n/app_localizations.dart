@@ -68,6 +68,16 @@ abstract class AppLocalizations {
 
   final String localeName;
 
+  String get designCatalogTitle;
+  String get skillRadarTitle;
+  String get skillRadarDescription;
+  String get skillRadarAccessibleTitle;
+  String get skillConsistency;
+  String get skillFocus;
+  String get skillPlanning;
+  String get skillEnergy;
+  String get skillStrength;
+
   static AppLocalizations? of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }

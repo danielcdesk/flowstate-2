@@ -31,4 +31,5 @@ Esta pasta reúne referências visuais e de interação enviadas para o Flow Sta
 | `images/habit-calendar-light.png` | Hábitos, calendário, progresso e navegação inferior |
 | `images/habitap-dark.png` | Onboarding escuro, progresso e heatmaps por hábito |
 | `videos/annual-retrospective-interaction.mp4` | Referência de interação para a retrospectiva anual |
+| `videos/radar-gamification-reference.mp4` | Referência visual do radar de habilidades e progressão estilo jogo |
 | `icons/coolicons.v4.1-unverified.zip` | Pacote de ícones aguardando licença |

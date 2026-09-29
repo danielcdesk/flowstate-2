@@ -1,3 +1,12 @@
 {
-  "@@locale": "es"
+  "@@locale": "es",
+  "designCatalogTitle": "Catálogo visual",
+  "skillRadarTitle": "Radar de habilidades",
+  "skillRadarDescription": "Una vista previa visual con datos de ejemplo. El progreso real se calculará a partir de tu historial.",
+  "skillRadarAccessibleTitle": "Radar de habilidades de ejemplo",
+  "skillConsistency": "Constancia",
+  "skillFocus": "Enfoque",
+  "skillPlanning": "Planificación",
+  "skillEnergy": "Energía",
+  "skillStrength": "Fuerza"
 }

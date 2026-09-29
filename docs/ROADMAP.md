@@ -11,6 +11,7 @@ FASE 2 — Domínio (Dart puro, sem UI, sem banco). Tudo do BRIEF em lib/domain 
 FASE 3 — Dados. Drift schema v1, repositórios (interfaces no domain), infraestrutura de migração com fixture v1, quick_check ao abrir, backup e restauração criptografados, backup automático rotativo, CSV. Aceite: teste de migração; restauração de um backup de cada versão; falha no meio da restauração = nada muda; teste de banco corrompido.
 
 FASE 4 — Features conectadas, uma por vez com aprovação: 4a Hoje real; 4b Hábitos; 4c Plano e Rotina (com time-blocking); 4d Foco; 4e Evolução e revisão semanal. Aceite por feature: testes de widget, goldens, acessibilidade, estados vazio/carregando/erro.
+ Na Fase 4e, a Evolução também inclui a Retrospectiva anual: uma tela interativa com linha do tempo e marcos calculados localmente. Ela não gera nem exporta vídeo; vídeos na biblioteca de referências são somente material de direção visual e interação.
 
 FASE 5 — Notificações locais (permissão em contexto, canais no Android, gatilhos por horário local, reagendar ao editar e reiniciar, sem alarme exato) e Treinos.
 

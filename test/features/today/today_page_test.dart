@@ -18,6 +18,12 @@ void main() {
     expect(find.text('Feitos hoje'), findsOneWidget);
     expect(find.text('Próxima ação'), findsOneWidget);
     expect(find.text('Novo hábito'), findsOneWidget);
+
+    await tester.scrollUntilVisible(
+      find.text('Hábitos de hoje'),
+      500,
+      scrollable: find.byType(Scrollable),
+    );
     expect(find.text('Hábitos de hoje'), findsOneWidget);
   });
 }

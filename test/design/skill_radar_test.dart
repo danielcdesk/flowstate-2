@@ -27,7 +27,7 @@ void main() {
       ),
     );
 
-    expect(find.byType(CustomPaint), findsOneWidget);
+    expect(find.byType(SkillRadar), findsOneWidget);
     expect(find.bySemanticsLabel('Radar de habilidades'), findsOneWidget);
     expect(find.text('Constância 78%'), findsOneWidget);
     expect(find.text('Força 42%'), findsOneWidget);

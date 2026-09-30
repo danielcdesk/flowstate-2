@@ -1,0 +1,41 @@
+name: generate-goldens
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - test/design/goldens_test.dart
+      - lib/**
+      - test/**
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fase-1
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+      - name: Get Flutter packages
+        run: flutter pub get
+      - name: Generate golden baselines
+        run: flutter test --update-goldens test/design/goldens_test.dart
+      - name: Commit generated goldens
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add test/design/goldens
+          if git diff --cached --quiet; then
+            echo 'No golden changes.'
+            exit 0
+          fi
+          git commit -m 'test: add generated golden baselines [skip ci]'
+          git push origin HEAD:fase-1

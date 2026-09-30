@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flowstate/design/components/flow_ring.dart';
 import 'package:flowstate/design/tokens.dart';
 
 class HeroStat extends StatelessWidget {

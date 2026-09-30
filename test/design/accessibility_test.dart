@@ -16,9 +16,9 @@ void main() {
       ),
     );
 
-    expect(await meetsGuideline(tester, textContrastGuideline), isTrue);
-    expect(await meetsGuideline(tester, androidTapTargetGuideline), isTrue);
-    expect(await meetsGuideline(tester, labeledTapTargetGuideline), isTrue);
+    expect(tester, meetsGuideline(textContrastGuideline));
+    expect(tester, meetsGuideline(androidTapTargetGuideline));
+    expect(tester, meetsGuideline(labeledTapTargetGuideline));
     semantics.dispose();
   });
 }

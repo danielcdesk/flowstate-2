@@ -11,7 +11,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         theme: FlowTheme.light(),
-        home: const TodayPage(),
+        home: const Scaffold(body: TodayPage()),
       ),
     );
 

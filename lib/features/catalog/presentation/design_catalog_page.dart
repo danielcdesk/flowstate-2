@@ -33,7 +33,7 @@ class DesignCatalogPage extends StatelessWidget {
                 const SizedBox(height: FlowTokens.space8),
                 Card(
                   child: Padding(
-                    padding: const EdgeInsets.all(FlowTokens.space6),
+                    padding: FlowTokens.cardPadding,
                     child: SkillRadar(
                       title: localizations.skillRadarAccessibleTitle,
                       metrics: <SkillRadarMetric>[

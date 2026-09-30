@@ -1,6 +1,6 @@
 # Estado do projeto
 Fase atual: 1 (em andamento)
-Feito: projeto Flutter Android/Windows; documentos-base; análise estrita; l10n ARB pt-BR/en/es; shell inicial; testes de arquitetura; tooling/check.ps1; CI; biblioteca de referências em docs/refs; Retrospectiva anual interativa registrada para a Fase 4e; SkillRadar visual com dados falsos no catálogo.
+Feito: projeto Flutter Android/Windows; documentos-base; análise estrita; l10n ARB pt-BR/en/es; shell adaptativo inicial; telas Hoje e Boas-vindas; componentes de fluxo, hero, ações, lista e radar; testes de widgets; tooling/check.ps1; CI; biblioteca de referências em docs/refs; Retrospectiva anual interativa registrada para a Fase 4e.
 Pendente: completar o visual da Fase 1, testes de contraste/acessibilidade e telas Hoje/Boas-vindas.
 Árvore de pastas: AGENTS.md; docs/; lib/app; lib/core; lib/data; lib/design; lib/domain; lib/features; lib/l10n; test/architecture; tooling; android; windows; .github/workflows
 Comandos: tooling/check.ps1

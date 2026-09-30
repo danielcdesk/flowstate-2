@@ -22,7 +22,7 @@ void main() {
     await tester.scrollUntilVisible(
       find.text('Hábitos de hoje'),
       500,
-      scrollable: find.byType(Scrollable),
+      scrollable: find.byType(ListView),
     );
     expect(find.text('Hábitos de hoje'), findsOneWidget);
   });

@@ -37,6 +37,7 @@ class SkillRadar extends StatelessWidget {
 
     return Semantics(
       container: true,
+      explicitChildNodes: true,
       label: title,
       value: summary,
       child: Column(

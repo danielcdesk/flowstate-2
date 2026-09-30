@@ -9,6 +9,10 @@ abstract final class FlowTokens {
   static const double radiusMedium = 16;
   static const double radarSize = 280;
   static const double catalogMaxWidth = 720;
+  static const double contentMaxWidth = 1100;
+  static const double tapTarget = 56;
+  static const double compactBreakpoint = 600;
+  static const double expandedBreakpoint = 840;
 
   static const Color canvasDark = Color(0xFF101210);
   static const Color surfaceDark = Color(0xFF171A17);
@@ -19,4 +23,6 @@ abstract final class FlowTokens {
   static const Color textLight = Color(0xFFF4F5F2);
 
   static const EdgeInsets pagePadding = EdgeInsets.all(space6);
+  static const EdgeInsets cardPadding = EdgeInsets.all(space6);
+  static const EdgeInsets sectionPadding = EdgeInsets.all(space4);
 }

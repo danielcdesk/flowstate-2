@@ -26,7 +26,7 @@ jobs:
       - name: Get Flutter packages
         run: flutter pub get
       - name: Generate golden baselines
-        run: flutter test --update-goldens test/design/goldens_test.dart
+        run: flutter test --update-goldens --reporter expanded test/design/goldens_test.dart
       - name: Commit generated goldens
         shell: bash
         run: |

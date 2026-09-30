@@ -21,36 +21,41 @@ class QuickActionGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        mainAxisExtent: 92,
-        crossAxisSpacing: FlowTokens.space3,
-        mainAxisSpacing: FlowTokens.space3,
-      ),
-      itemCount: actions.length,
-      itemBuilder: (BuildContext context, int index) {
-        final QuickAction action = actions[index];
-        return Semantics(
-          button: true,
-          label: action.label,
-          child: InkWell(
-            onTap: action.onPressed,
-            borderRadius: BorderRadius.circular(FlowTokens.radiusMedium),
-            child: Padding(
-              padding: const EdgeInsets.all(FlowTokens.space2),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(action.icon, size: FlowTokens.tapTarget / 2),
-                  const SizedBox(height: FlowTokens.space2),
-                  Text(action.label, textAlign: TextAlign.center),
-                ],
-              ),
-            ),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final int columns = constraints.maxWidth < 420 ? 2 : 4;
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: columns,
+            mainAxisExtent: 92,
+            crossAxisSpacing: FlowTokens.space3,
+            mainAxisSpacing: FlowTokens.space3,
           ),
+          itemCount: actions.length,
+          itemBuilder: (BuildContext context, int index) {
+            final QuickAction action = actions[index];
+            return Semantics(
+              button: true,
+              label: action.label,
+              child: InkWell(
+                onTap: action.onPressed,
+                borderRadius: BorderRadius.circular(FlowTokens.radiusMedium),
+                child: Padding(
+                  padding: const EdgeInsets.all(FlowTokens.space2),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(action.icon, size: FlowTokens.tapTarget / 2),
+                      const SizedBox(height: FlowTokens.space2),
+                      Text(action.label, textAlign: TextAlign.center),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
         );
       },
     );

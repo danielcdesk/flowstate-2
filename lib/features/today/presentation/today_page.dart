@@ -29,9 +29,11 @@ class TodayPage extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: FlowTokens.space2),
-            Row(
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              runSpacing: FlowTokens.space2,
               children: <Widget>[
-                Expanded(child: Text(localizations.todaySubtitle)),
+                Text(localizations.todaySubtitle),
                 Text(
                   localizations.todayLevelXp,
                   style: Theme.of(context).textTheme.labelLarge,

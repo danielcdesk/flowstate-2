@@ -9,7 +9,7 @@ flutter analyze --fatal-infos --fatal-warnings
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host '== flutter test --coverage =='
-flutter test --coverage
+flutter test --coverage --reporter expanded
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host '== architecture tests =='

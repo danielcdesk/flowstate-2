@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11120f" />
+    <meta name="description" content="Flow State — um espaço offline para organizar o dia e acompanhar evolução." />
+    <title>Flow State — projeto</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #11120f;
+        --surface: #191b16;
+        --surface-2: #22251e;
+        --text: #f4f4e9;
+        --muted: #a8aca0;
+        --line: #34382f;
+        --accent: #c7f36a;
+        --accent-dim: #829f3f;
+        --coral: #ff8b72;
+        --max: 1120px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: radial-gradient(circle at 80% -10%, #303a1d 0, transparent 34rem), var(--bg);
+        color: var(--text);
+        font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      a { color: inherit; }
+      .page { width: min(100% - 40px, var(--max)); margin: 0 auto; }
+      .topbar { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line); }
+      .brand { display: flex; gap: 12px; align-items: center; font-weight: 700; letter-spacing: .02em; }
+      .ring { width: 32px; height: 32px; border: 5px solid var(--accent); border-right-color: transparent; border-radius: 50%; transform: rotate(-38deg); }
+      .nav { display: flex; gap: 20px; color: var(--muted); font-size: 13px; }
+      .nav a { text-decoration: none; }
+      .nav a:hover { color: var(--accent); }
+      .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; padding: 92px 0 72px; }
+      .eyebrow { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; }
+      h1 { max-width: 700px; margin: 12px 0 20px; font-size: clamp(42px, 7vw, 78px); line-height: .98; letter-spacing: -.06em; }
+      h2 { margin: 0 0 12px; font-size: clamp(25px, 4vw, 38px); letter-spacing: -.04em; }
+      h3 { margin: 0; font-size: 17px; }
+      .lede { max-width: 590px; color: var(--muted); font-size: 18px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      .button { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 11px 16px; text-decoration: none; }
+      .button.primary { border-color: var(--accent); background: var(--accent); color: #11120f; font-weight: 700; }
+      .hero-panel { padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: rgba(25, 27, 22, .86); box-shadow: 0 24px 80px rgba(0, 0, 0, .22); }
+      .panel-label { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
+      .radar { display: block; width: 100%; margin: 12px auto 0; }
+      .metric-row { display: flex; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); }
+      .metric-row strong { color: var(--text); }
+      .section { padding: 70px 0; border-top: 1px solid var(--line); }
+      .section-intro { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 28px; }
+      .section-intro p { max-width: 480px; margin: 0; color: var(--muted); }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .card { min-height: 170px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+      .card p { color: var(--muted); }
+      .card .index { display: block; margin-bottom: 22px; color: var(--accent); font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .timeline { display: grid; grid-template-columns: 180px 1fr; gap: 28px; }
+      .phase-tabs { display: grid; gap: 8px; align-content: start; }
+      .phase-tab { cursor: pointer; border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: transparent; color: var(--muted); text-align: left; font: inherit; }
+      .phase-tab[aria-selected="true"] { border-color: var(--accent); background: var(--surface-2); color: var(--text); }
+      .phase-detail { min-height: 250px; padding: 28px; border-left: 2px solid var(--accent-dim); background: linear-gradient(90deg, var(--surface), transparent); }
+      .phase-detail p { max-width: 650px; color: var(--muted); }
+      .phase-detail ul { display: grid; gap: 8px; padding-left: 20px; color: var(--muted); }
+      .status { display: inline-flex; margin-top: 12px; border: 1px solid var(--accent-dim); border-radius: 999px; padding: 5px 9px; color: var(--accent); font-size: 12px; }
+      .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--line); }
+      .principle { padding: 22px; background: var(--surface); }
+      .principle strong { display: block; margin-bottom: 6px; }
+      .principle span { color: var(--muted); }
+      footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px 0 50px; color: var(--muted); font-size: 13px; }
+      @media (max-width: 760px) {
+        .page { width: min(100% - 28px, var(--max)); }
+        .topbar, footer { align-items: flex-start; flex-direction: column; }
+        .nav { gap: 12px; flex-wrap: wrap; }
+        .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 64px; }
+        .grid, .principles { grid-template-columns: 1fr; }
+        .section-intro { align-items: flex-start; flex-direction: column; }
+        .timeline { grid-template-columns: 1fr; }
+        .phase-tabs { grid-template-columns: repeat(4, 1fr); }
+        .phase-tab { padding: 9px; font-size: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Flow State início"><span class="ring" aria-hidden="true"></span>Flow State</a>
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="#visao">Visão</a>
+          <a href="#evolucao">Evolução</a>
+          <a href="#fases">Fases</a>
+          <a href="https://github.com" rel="noreferrer">GitHub</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div>
+          <div class="eyebrow">Projeto Flow State 2</div>
+          <h1>Seu dia em um só lugar.</h1>
+          <p class="lede">Um app local, privado e gentil para hábitos, tarefas, rotina, foco e treino — com espaço para enxergar a própria evolução sem culpa.</p>
+          <div class="actions"><a class="button primary" href="#evolucao">Ver a evolução</a><a class="button" href="#fases">Acompanhar o projeto</a></div>
+        </div>
+        <aside class="hero-panel" aria-label="Prévia do radar de habilidades">
+          <div class="panel-label"><span>Radar de habilidades</span><span>fase 1 · visual</span></div>
+          <svg class="radar" viewBox="0 0 320 280" role="img" aria-label="Radar com foco, corpo, mente e consistência">
+            <g fill="none" stroke="#34382f" stroke-width="1">
+              <path d="M160 24 278 92 232 228H88L42 92Z"/><path d="M160 58 245 107 212 194H108L75 107Z"/><path d="M160 96 211 121 192 164H128L109 121Z"/>
+              <path d="M160 24V232M42 92 232 228M278 92 88 228"/>
+            </g>
+            <path d="M160 47 229 118 204 193 112 181 87 111Z" fill="#c7f36a" fill-opacity=".2" stroke="#c7f36a" stroke-width="3"/>
+            <g fill="#c7f36a"><circle cx="160" cy="47" r="5"/><circle cx="229" cy="118" r="5"/><circle cx="204" cy="193" r="5"/><circle cx="112" cy="181" r="5"/><circle cx="87" cy="111" r="5"/></g>
+            <g fill="#a8aca0" font-size="11" text-anchor="middle"><text x="160" y="14">FOCO</text><text x="292" y="92">CORPO</text><text x="238" y="248">ROTINA</text><text x="82" y="248">MENTE</text><text x="28" y="92">ENERGIA</text></g>
+          </svg>
+          <div class="metric-row"><span>Progresso do sistema</span><strong>em construção</strong></div>
+        </aside>
+      </section>
+
+      <section class="section" id="visao">
+        <div class="section-intro"><div><div class="eyebrow">A ideia</div><h2>Clareza para continuar.</h2></div><p>O Flow State transforma pequenas ações em sinais compreensíveis: o que foi feito, o que está vivo e em que direção a pessoa está crescendo.</p></div>
+        <div class="grid">
+          <article class="card"><span class="index">01 / LOCAL</span><h3>Privado por padrão</h3><p>Dados no aparelho, sem conta, sem feed e sem transformar autocuidado em comparação.</p></article>
+          <article class="card"><span class="index">02 / GENTIL</span><h3>O mínimo já conta</h3><p>Sequências tolerantes e planos de baixa energia para continuar mesmo nos dias difíceis.</p></article>
+          <article class="card"><span class="index">03 / VISÍVEL</span><h3>Evolução legível</h3><p>Radar, linha do tempo e retrospectiva anual para reconhecer mudanças reais, sem vídeo obrigatório.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="evolucao">
+        <div class="section-intro"><div><div class="eyebrow">Linha de evolução</div><h2>Uma história que responde ao uso.</h2></div><p>A retrospectiva anual será uma tela interativa dentro do aplicativo: marcos, habilidades e mudanças de consistência calculados localmente.</p></div>
+        <div class="principles">
+          <div class="principle"><strong>Radar vivo</strong><span>Cada eixo cresce a partir dos módulos ativos e das metas pessoais.</span></div>
+          <div class="principle"><strong>Marcos específicos</strong><span>Sequências, hábitos retomados, sessões e semanas fortes aparecem como fatos.</span></div>
+          <div class="principle"><strong>Linha cronológica</strong><span>O usuário navega pelo ano e abre detalhes de cada etapa.</span></div>
+          <div class="principle"><strong>Sem punição</strong><span>A experiência celebra direção e aprendizado, não perfeição.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="fases">
+        <div class="section-intro"><div><div class="eyebrow">Construção</div><h2>O projeto, fase por fase.</h2></div><p>Este painel acompanha o desenvolvimento e deixa explícito o que já foi decidido e o que ainda precisa de aprovação.</p></div>
+        <div class="timeline">
+          <div class="phase-tabs" role="tablist" aria-label="Fases do projeto">
+            <button class="phase-tab" role="tab" aria-selected="true" aria-controls="phase-1" data-phase="1">Fase 1</button>
+            <button class="phase-tab" role="tab" aria-selected="false" aria-controls="phase-2" data-phase="2">Fase 2</button>
+            <button class="phase-tab" role="tab" aria-selected="false" aria-controls="phase-3" data-phase="3">Fase 3</button>
+            <button class="phase-tab" role="tab" aria-selected="false" aria-controls="phase-4" data-phase="4">Fase 4</button>
+          </div>
+          <article class="phase-detail" id="phase-1" role="tabpanel" tabindex="0"><div class="eyebrow">Agora</div><h3>Visual primeiro</h3><p>Tokens, tema, componentes, shell adaptativo, Hoje, Boas-vindas e radar visual com dados falsos.</p><ul><li>Biblioteca de referências organizada</li><li>Retrospectiva anual registrada para a Fase 4e</li><li>Goldens e verificação completa ainda pendentes</li></ul><span class="status">em andamento</span></article>
+        </div>
+      </section>
+
+      <footer><span>Flow State · projeto em construção</span><span>offline-first · pt-BR · sem culpa</span></footer>
+    </main>
+    <script>
+      const content = {
+        1: { title: 'Visual primeiro', text: 'Tokens, tema, componentes, shell adaptativo, Hoje, Boas-vindas e radar visual com dados falsos.', items: ['Biblioteca de referências organizada', 'Retrospectiva anual registrada para a Fase 4e', 'Goldens e verificação completa ainda pendentes'], status: 'em andamento' },
+        2: { title: 'Domínio', text: 'Regras puras para datas, recorrência, hábitos, tarefas, foco, XP, conquistas e insights.', items: ['Sem UI e sem banco', 'Testes de borda e invariantes', 'Cobertura mínima de 90% no domínio'], status: 'planejada' },
+        3: { title: 'Dados', text: 'Persistência local com Drift/SQLite, migrações versionadas, backup criptografado e restauração segura.', items: ['Fixtures por versão', 'Integridade e exclusão lógica', 'CSV protegido contra injeção'], status: 'planejada' },
+        4: { title: 'Features conectadas', text: 'As telas deixam de usar dados falsos e passam a refletir o estado real do usuário.', items: ['Hoje e Hábitos', 'Plano, Rotina e Foco', 'Evolução, radar e retrospectiva anual'], status: 'planejada' }
+      };
+      const tabs = document.querySelectorAll('.phase-tab');
+      const panel = document.querySelector('.phase-detail');
+      tabs.forEach((tab) => tab.addEventListener('click', () => {
+        const phase = content[tab.dataset.phase];
+        tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+        panel.innerHTML = `<div class="eyebrow">Fase ${tab.dataset.phase}</div><h3>${phase.title}</h3><p>${phase.text}</p><ul>${phase.items.map((item) => `<li>${item}</li>`).join('')}</ul><span class="status">${phase.status}</span>`;
+      }));
+    </script>
+  </body>
+</html>

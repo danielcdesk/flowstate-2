@@ -8,5 +8,6 @@
 - A Retrospectiva anual será uma experiência interativa dentro de Evolução, com linha do tempo e dados calculados localmente; não será um vídeo exportado.
 - O radar de habilidades será implementado visualmente na Fase 1 com dados falsos e conectado a pontuações derivadas na Fase 4e. Distribuição manual de pontos é uma ideia futura, não uma regra da v1.
 - Na Fase 1, a tipografia usa fallback do sistema porque ainda não há duas famílias OFL fornecidas no workspace. A inclusão de fontes empacotadas permanece pendente de licença e arquivos aprovados.
+- Os goldens da Fase 1 cobrem 390×844 e 1440×900, nos temas claro e escuro, além de texto em escala 200%; a geração acontece no GitHub Actions porque o SDK local continua bloqueado pelo Application Control.
 - `flutter_localizations` e `intl` são dependências da Fase 0 porque o `gen-l10n` do Flutter 3.47.5 as exige mesmo com os catálogos ARB inicialmente vazios.
 - Pacotes candidatos (verificar manutenção, licença e suporte a Windows e Android antes de aprovar): clock, uuid, intl, drift, sqlite3, flutter_riverpod, flutter_local_notifications + timezone, wakelock_plus, cryptography, file_picker, share_plus, window_manager, uma solução mantida de instância única no Windows.

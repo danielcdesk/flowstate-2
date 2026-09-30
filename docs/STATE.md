@@ -5,4 +5,5 @@ Pendente: gerar goldens compacto/expandido, claro/escuro e fonte 200%; concluir 
 Árvore de pastas: AGENTS.md; docs/; lib/app; lib/core; lib/data; lib/design; lib/domain; lib/features; lib/l10n; test/architecture; tooling; android; windows; .github/workflows
 Comandos: tooling/check.ps1
 Decisões abertas: APPLICATION_ID, nome do app, fontes, opção do anel-assinatura
+CI/publicação: quality.yml e pages.yml configurados no repositório GitHub; a primeira publicação depende da execução do Pages após sua ativação.
 Última atualização: 2026-09-29

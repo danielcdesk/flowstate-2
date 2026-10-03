@@ -7,7 +7,7 @@ import 'package:flowstate/domain/shared/record_metadata.dart';
 import 'package:flowstate/domain/tasks/task.dart';
 
 const String testDeviceId = 'test-device';
-final Clock fixedClock = Clock.fixed(DateTime.utc(2026, 9, 30, 12));
+final Clock fixedClock = Clock.fixed(DateTime(2026, 9, 30, 9));
 
 String testUuid(int number) {
   return '00000000-0000-4000-8000-${number.toString().padLeft(12, '0')}';

@@ -17,6 +17,8 @@ abstract final class FlowTokens {
   static const double heatmapCellRadius = 4;
   static const double heatmapGap = 4;
   static const double formMaxWidth = 560;
+  static const double habitHeaderStackWidth = 420;
+  static const double accessibilityLargeTextScale = 1.4;
   static const EdgeInsets habitRowPadding = EdgeInsets.only(bottom: space2);
   static const EdgeInsets habitDetailPadding = EdgeInsets.fromLTRB(
     space4,

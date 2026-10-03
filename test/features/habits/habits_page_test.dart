@@ -107,15 +107,41 @@ void main() {
     );
     expect(find.text('Tentar novamente'), findsOneWidget);
   });
+
+  testWidgets('keeps the compact header usable with 200 percent text', (
+    WidgetTester tester,
+  ) async {
+    tester.view
+      ..physicalSize = const Size(390, 844)
+      ..devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final fixture = createTodayControllerFixture();
+    addTearDown(fixture.dispose);
+    await DriftHabitRepository(fixture.database).saveHabit(testHabit(id: 902));
+    await fixture.habitsController.load();
+    await tester.pumpWidget(_app(fixture, textScaleFactor: 2));
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+  });
 }
 
-Widget _app(TodayControllerFixture fixture) => MaterialApp(
-  theme: FlowTheme.light(),
-  locale: const Locale('pt', 'BR'),
-  localizationsDelegates: AppLocalizations.localizationsDelegates,
-  supportedLocales: AppLocalizations.supportedLocales,
-  home: Scaffold(body: HabitsPage(controller: fixture.habitsController)),
-);
+Widget _app(TodayControllerFixture fixture, {double textScaleFactor = 1}) =>
+    MaterialApp(
+      theme: FlowTheme.light(),
+      locale: const Locale('pt', 'BR'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Builder(
+        builder: (BuildContext context) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScaleFactor)),
+          child: Scaffold(
+            body: HabitsPage(controller: fixture.habitsController),
+          ),
+        ),
+      ),
+    );
 
 Widget _controllerApp(HabitsController controller) => MaterialApp(
   theme: FlowTheme.light(),

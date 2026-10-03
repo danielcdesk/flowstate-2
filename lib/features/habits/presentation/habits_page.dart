@@ -105,29 +105,47 @@ class _HabitsPageState extends State<HabitsPage> {
     );
   }
 
-  Widget _header(AppLocalizations l10n) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Expanded(
-        child: Column(
+  Widget _header(AppLocalizations l10n) => LayoutBuilder(
+    builder: (BuildContext context, BoxConstraints constraints) {
+      final bool stack =
+          constraints.maxWidth < FlowTokens.habitHeaderStackWidth ||
+          MediaQuery.textScalerOf(context).scale(1) >=
+              FlowTokens.accessibilityLargeTextScale;
+      final Widget title = Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            l10n.habitsScreenTitle,
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          const SizedBox(height: FlowTokens.space2),
+          Text(l10n.habitsScreenSubtitle),
+        ],
+      );
+      final Widget createButton = AppButton(
+        label: l10n.habitsCreateAction,
+        icon: stack ? null : Icons.add,
+        onPressed: () => _showEditor(context),
+      );
+      if (stack) {
+        return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              l10n.habitsScreenTitle,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: FlowTokens.space2),
-            Text(l10n.habitsScreenSubtitle),
+            title,
+            const SizedBox(height: FlowTokens.space3),
+            createButton,
           ],
-        ),
-      ),
-      const SizedBox(width: FlowTokens.space2),
-      AppButton(
-        label: l10n.habitsCreateAction,
-        icon: Icons.add,
-        onPressed: () => _showEditor(context),
-      ),
-    ],
+        );
+      }
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(child: title),
+          const SizedBox(width: FlowTokens.space2),
+          createButton,
+        ],
+      );
+    },
   );
 
   Future<void> _showEditor(BuildContext context, {Habit? existing}) async {
@@ -195,38 +213,52 @@ class _TodaySummary extends StatelessWidget {
         .toList(growable: false);
     final int completed = scheduled.where(controller.isCompletedToday).length;
     final int total = scheduled.length;
+    final Widget progress = ClipRRect(
+      borderRadius: BorderRadius.circular(FlowTokens.radiusMedium),
+      child: LinearProgressIndicator(
+        value: total == 0 ? 0 : completed / total,
+        minHeight: FlowTokens.progressThickness,
+        backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+      ),
+    );
+    final Widget count = Text(
+      l10n.todayProgressValue(completed, total),
+      style: Theme.of(context).textTheme.headlineLarge,
+    );
+    final bool stack =
+        MediaQuery.textScalerOf(context).scale(1) >=
+        FlowTokens.accessibilityLargeTextScale;
     return Semantics(
       label: l10n.todayProgressValue(completed, total),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            l10n.todayProgressTitle,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          const SizedBox(height: FlowTokens.space2),
-          Row(
-            children: <Widget>[
-              Text(
-                l10n.todayProgressValue(completed, total),
-                style: Theme.of(context).textTheme.headlineLarge,
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) => Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              l10n.todayProgressTitle,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: FlowTokens.space2),
+            if (stack ||
+                constraints.maxWidth < FlowTokens.habitHeaderStackWidth)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  count,
+                  const SizedBox(height: FlowTokens.space2),
+                  SizedBox(width: double.infinity, child: progress),
+                ],
+              )
+            else
+              Row(
+                children: <Widget>[
+                  count,
+                  const SizedBox(width: FlowTokens.space3),
+                  Expanded(child: progress),
+                ],
               ),
-              const SizedBox(width: FlowTokens.space3),
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(FlowTokens.radiusMedium),
-                  child: LinearProgressIndicator(
-                    value: total == 0 ? 0 : completed / total,
-                    minHeight: FlowTokens.progressThickness,
-                    backgroundColor: Theme.of(context)
-                        .colorScheme
-                        .surfaceContainerHighest,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

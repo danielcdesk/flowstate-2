@@ -5,6 +5,8 @@
 - Clock injetado; LocalDate próprio; dia lógico configurável.
 - XP por ledger idempotente; sequência e nível sempre derivados.
 - Backup criptografado; sem rede em runtime.
+- Backups `.flowbackup` usam AES-256-GCM e Argon2id via `cryptography` (implementação Dart com fallback multiplataforma). PBKDF2 não é necessário porque o pacote mantido oferece Argon2id. A versão do envelope guarda algoritmo e parâmetros para permitir migração; restauração limita parâmetros aceitos e o tamanho do arquivo antes de decifrar. Backups portáteis derivam a chave da senha escolhida; backups locais automáticos usam uma chave aleatória protegida pelo armazenamento seguro do SO e rodam os cinco mais recentes.
+- A chave aleatória dos backups automáticos usa `flutter_secure_storage`, apoiado pelo Android Keystore e Windows Credential Manager; ela não é incluída no backup portátil e não substitui a senha escolhida para transferências.
 - A Retrospectiva anual será uma experiência interativa dentro de Evolução, com linha do tempo e dados calculados localmente; não será um vídeo exportado.
 - O radar de habilidades será implementado visualmente na Fase 1 com dados falsos e conectado a pontuações derivadas na Fase 4e. Distribuição manual de pontos é uma ideia futura, não uma regra da v1.
 - Na Fase 1, a tipografia usa fallback do sistema porque ainda não há duas famílias OFL fornecidas no workspace. A inclusão de fontes empacotadas permanece pendente de licença e arquivos aprovados.

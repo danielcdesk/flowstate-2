@@ -8,10 +8,7 @@ import 'package:flowstate/features/catalog/presentation/design_catalog_page.dart
 void main() {
   testWidgets('shows the debug catalog radar', (WidgetTester tester) async {
     await tester.pumpWidget(
-      MaterialApp(
-        theme: FlowTheme.dark(),
-        home: const DesignCatalogPage(),
-      ),
+      MaterialApp(theme: FlowTheme.dark(), home: const DesignCatalogPage()),
     );
 
     expect(find.byType(SkillRadar), findsOneWidget);

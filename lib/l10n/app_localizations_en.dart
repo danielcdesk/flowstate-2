@@ -77,7 +77,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startWorkoutAction => 'Start workout';
 
   @override
-  String get todayHabitsTitle => "Today's habits";
+  String get todayHabitsTitle => 'Today\'s habits';
 
   @override
   String get habitMorning => 'Breathe for 2 minutes';

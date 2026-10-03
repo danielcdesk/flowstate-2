@@ -23,10 +23,7 @@ class ListRow extends StatelessWidget {
       onTap: onTap,
       title: Text(title),
       subtitle: Text(subtitle),
-      trailing: Text(
-        trailing,
-        style: Theme.of(context).textTheme.labelLarge,
-      ),
+      trailing: Text(trailing, style: Theme.of(context).textTheme.labelLarge),
     );
   }
 }

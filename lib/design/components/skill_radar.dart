@@ -51,9 +51,7 @@ class SkillRadar extends StatelessWidget {
                 painter: _SkillRadarPainter(
                   metrics: metrics,
                   accent: accent,
-                  gridColor: Theme.of(context)
-                      .colorScheme
-                      .onSurface
+                  gridColor: Theme.of(context).colorScheme.onSurface
                       .withValues(alpha: 0.22),
                 ),
               ),

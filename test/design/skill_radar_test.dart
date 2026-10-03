@@ -35,10 +35,7 @@ void main() {
   });
 
   test('clamps values to the visual scale', () {
-    const SkillRadarMetric metric = SkillRadarMetric(
-      label: 'Foco',
-      value: 140,
-    );
+    const SkillRadarMetric metric = SkillRadarMetric(label: 'Foco', value: 140);
 
     expect(metric.normalizedValue, 100);
   });

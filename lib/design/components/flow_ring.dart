@@ -32,9 +32,7 @@ class FlowRing extends StatelessWidget {
           child: CustomPaint(
             painter: _FlowRingPainter(
               progress: clampedProgress,
-              trackColor: Theme.of(context)
-                  .colorScheme
-                  .onSurface
+              trackColor: Theme.of(context).colorScheme.onSurface
                   .withValues(alpha: 0.14),
               progressColor: Theme.of(context).colorScheme.primary,
             ),

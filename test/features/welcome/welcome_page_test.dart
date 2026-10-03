@@ -10,10 +10,7 @@ void main() {
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(
-      MaterialApp(
-        theme: FlowTheme.light(),
-        home: const WelcomePage(),
-      ),
+      MaterialApp(theme: FlowTheme.light(), home: const WelcomePage()),
     );
 
     expect(find.text('Seu dia em um só lugar.'), findsOneWidget);

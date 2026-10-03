@@ -45,22 +45,22 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
     ];
     final List<NavigationDestination> bottomDestinations =
         <NavigationDestination>[
-      for (int index = 0; index < labels.length; index++)
-        NavigationDestination(
-          icon: Icon(icons[index]),
-          selectedIcon: Icon(icons[index]),
-          label: labels[index],
-        ),
-    ];
+          for (int index = 0; index < labels.length; index++)
+            NavigationDestination(
+              icon: Icon(icons[index]),
+              selectedIcon: Icon(icons[index]),
+              label: labels[index],
+            ),
+        ];
     final List<NavigationRailDestination> railDestinations =
         <NavigationRailDestination>[
-      for (int index = 0; index < labels.length; index++)
-        NavigationRailDestination(
-          icon: Icon(icons[index]),
-          selectedIcon: Icon(icons[index]),
-          label: Text(labels[index]),
-        ),
-    ];
+          for (int index = 0; index < labels.length; index++)
+            NavigationRailDestination(
+              icon: Icon(icons[index]),
+              selectedIcon: Icon(icons[index]),
+              label: Text(labels[index]),
+            ),
+        ];
 
     return Scaffold(
       body: LayoutBuilder(

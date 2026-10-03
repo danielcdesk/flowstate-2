@@ -195,6 +195,215 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get flowRingSemanticLabel => 'Progresso do dia';
+
+  @override
+  String get habitsScreenTitle => 'Seus hábitos';
+
+  @override
+  String get habitsListSectionTitle => 'Seu ritmo';
+
+  @override
+  String get habitsScreenSubtitle => 'Pequenos passos, no seu ritmo.';
+
+  @override
+  String get habitsCreateAction => 'Criar hábito';
+
+  @override
+  String get habitsEmptyTitle => 'Comece com um passo pequeno';
+
+  @override
+  String get habitsEmptyMessage =>
+      'Escolha algo simples que você gostaria de repetir. Você pode ajustar depois.';
+
+  @override
+  String get habitsLoading => 'Carregando seus hábitos';
+
+  @override
+  String get habitsLoadError =>
+      'Não foi possível carregar seus hábitos. Seus dados continuam neste aparelho.';
+
+  @override
+  String get habitsErrorTitle => 'Não foi possível carregar agora';
+
+  @override
+  String get habitsSaveError =>
+      'Não foi possível salvar o hábito. Seus dados continuam neste aparelho.';
+
+  @override
+  String get habitsRetryAction => 'Tentar novamente';
+
+  @override
+  String get habitsStreakLabel => 'Sequência atual';
+
+  @override
+  String get habitsWeekLabel => 'Nesta semana';
+
+  @override
+  String habitsWeekProgress(int completed, int target) {
+    String _temp0 = intl.Intl.pluralLogic(
+      target,
+      locale: localeName,
+      other: '$target vezes',
+      one: '1 vez',
+    );
+    return '$completed de $_temp0';
+  }
+
+  @override
+  String habitsWeeklyTargetOption(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vezes por semana',
+      one: '1 vez por semana',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get habitsLogFullAction => 'Marcar como feito';
+
+  @override
+  String get habitsLogMinimumAction => 'Fazer versão mínima';
+
+  @override
+  String get habitsEditAction => 'Editar hábito';
+
+  @override
+  String get habitsArchiveAction => 'Arquivar hábito';
+
+  @override
+  String get habitsArchivedMessage =>
+      'Hábito arquivado. Seu histórico foi preservado.';
+
+  @override
+  String get habitsCreateTitle => 'Criar hábito';
+
+  @override
+  String get habitsEditTitle => 'Editar hábito';
+
+  @override
+  String get habitsNameLabel => 'Nome do hábito';
+
+  @override
+  String get habitsNameHint => 'Ex.: Ler por 10 minutos';
+
+  @override
+  String get habitsIconLabel => 'Ícone';
+
+  @override
+  String get habitsCategoryLabel => 'Área';
+
+  @override
+  String get habitsCategoryMind => 'Mente';
+
+  @override
+  String get habitsCategoryBody => 'Corpo';
+
+  @override
+  String get habitsCategoryFocus => 'Foco';
+
+  @override
+  String get habitsFrequencyLabel => 'Frequência';
+
+  @override
+  String get habitsFrequencyDaily => 'Todos os dias';
+
+  @override
+  String get habitsFrequencyWeekdays => 'Dias escolhidos';
+
+  @override
+  String get habitsFrequencyWeeklyTarget => 'Meta semanal';
+
+  @override
+  String get habitsWeekdaysLabel => 'Repetir em';
+
+  @override
+  String get habitsWeeklyTargetLabel => 'Vezes por semana';
+
+  @override
+  String get habitsCueLabel => 'Gatilho (opcional)';
+
+  @override
+  String get habitsCueHint => 'Depois de...';
+
+  @override
+  String get habitsMinimumLabel => 'Versão mínima (opcional)';
+
+  @override
+  String get habitsMinimumHint => 'Ex.: Ler uma página';
+
+  @override
+  String get habitsEssentialLabel => 'Hábito essencial';
+
+  @override
+  String get habitsReminderLabel => 'Lembrete opcional';
+
+  @override
+  String get habitsChooseReminderAction => 'Escolher horário';
+
+  @override
+  String get habitsRemoveReminderAction => 'Remover lembrete';
+
+  @override
+  String get habitsNotScheduledToday => 'Sem repetição programada para hoje';
+
+  @override
+  String get habitsSaveAction => 'Salvar hábito';
+
+  @override
+  String get habitsCancelAction => 'Cancelar';
+
+  @override
+  String get habitsHistoryLabel => 'Últimos 28 dias';
+
+  @override
+  String get habitsHistoryFull => 'Feito';
+
+  @override
+  String get habitsHistoryMinimum => 'Versão mínima';
+
+  @override
+  String get habitsHistoryMissed => 'Sem registro';
+
+  @override
+  String get habitsTodayCompleted => 'Feito hoje';
+
+  @override
+  String get habitsArchivedTitle => 'Hábitos arquivados';
+
+  @override
+  String get habitIconMindfulness => 'Respiração';
+
+  @override
+  String get habitIconReading => 'Leitura';
+
+  @override
+  String get habitIconMovement => 'Movimento';
+
+  @override
+  String get habitIconWater => 'Pausa';
+
+  @override
+  String get weekdayMon => 'Seg';
+
+  @override
+  String get weekdayTue => 'Ter';
+
+  @override
+  String get weekdayWed => 'Qua';
+
+  @override
+  String get weekdayThu => 'Qui';
+
+  @override
+  String get weekdayFri => 'Sex';
+
+  @override
+  String get weekdaySat => 'Sáb';
+
+  @override
+  String get weekdaySun => 'Dom';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -387,4 +596,213 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get flowRingSemanticLabel => 'Progresso do dia';
+
+  @override
+  String get habitsScreenTitle => 'Seus hábitos';
+
+  @override
+  String get habitsListSectionTitle => 'Seu ritmo';
+
+  @override
+  String get habitsScreenSubtitle => 'Pequenos passos, no seu ritmo.';
+
+  @override
+  String get habitsCreateAction => 'Criar hábito';
+
+  @override
+  String get habitsEmptyTitle => 'Comece com um passo pequeno';
+
+  @override
+  String get habitsEmptyMessage =>
+      'Escolha algo simples que você gostaria de repetir. Você pode ajustar depois.';
+
+  @override
+  String get habitsLoading => 'Carregando seus hábitos';
+
+  @override
+  String get habitsLoadError =>
+      'Não foi possível carregar seus hábitos. Seus dados continuam neste aparelho.';
+
+  @override
+  String get habitsErrorTitle => 'Não foi possível carregar agora';
+
+  @override
+  String get habitsSaveError =>
+      'Não foi possível salvar o hábito. Seus dados continuam neste aparelho.';
+
+  @override
+  String get habitsRetryAction => 'Tentar novamente';
+
+  @override
+  String get habitsStreakLabel => 'Sequência atual';
+
+  @override
+  String get habitsWeekLabel => 'Nesta semana';
+
+  @override
+  String habitsWeekProgress(int completed, int target) {
+    String _temp0 = intl.Intl.pluralLogic(
+      target,
+      locale: localeName,
+      other: '$target vezes',
+      one: '1 vez',
+    );
+    return '$completed de $_temp0';
+  }
+
+  @override
+  String habitsWeeklyTargetOption(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vezes por semana',
+      one: '1 vez por semana',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get habitsLogFullAction => 'Marcar como feito';
+
+  @override
+  String get habitsLogMinimumAction => 'Fazer versão mínima';
+
+  @override
+  String get habitsEditAction => 'Editar hábito';
+
+  @override
+  String get habitsArchiveAction => 'Arquivar hábito';
+
+  @override
+  String get habitsArchivedMessage =>
+      'Hábito arquivado. Seu histórico foi preservado.';
+
+  @override
+  String get habitsCreateTitle => 'Criar hábito';
+
+  @override
+  String get habitsEditTitle => 'Editar hábito';
+
+  @override
+  String get habitsNameLabel => 'Nome do hábito';
+
+  @override
+  String get habitsNameHint => 'Ex.: Ler por 10 minutos';
+
+  @override
+  String get habitsIconLabel => 'Ícone';
+
+  @override
+  String get habitsCategoryLabel => 'Área';
+
+  @override
+  String get habitsCategoryMind => 'Mente';
+
+  @override
+  String get habitsCategoryBody => 'Corpo';
+
+  @override
+  String get habitsCategoryFocus => 'Foco';
+
+  @override
+  String get habitsFrequencyLabel => 'Frequência';
+
+  @override
+  String get habitsFrequencyDaily => 'Todos os dias';
+
+  @override
+  String get habitsFrequencyWeekdays => 'Dias escolhidos';
+
+  @override
+  String get habitsFrequencyWeeklyTarget => 'Meta semanal';
+
+  @override
+  String get habitsWeekdaysLabel => 'Repetir em';
+
+  @override
+  String get habitsWeeklyTargetLabel => 'Vezes por semana';
+
+  @override
+  String get habitsCueLabel => 'Gatilho (opcional)';
+
+  @override
+  String get habitsCueHint => 'Depois de...';
+
+  @override
+  String get habitsMinimumLabel => 'Versão mínima (opcional)';
+
+  @override
+  String get habitsMinimumHint => 'Ex.: Ler uma página';
+
+  @override
+  String get habitsEssentialLabel => 'Hábito essencial';
+
+  @override
+  String get habitsReminderLabel => 'Lembrete opcional';
+
+  @override
+  String get habitsChooseReminderAction => 'Escolher horário';
+
+  @override
+  String get habitsRemoveReminderAction => 'Remover lembrete';
+
+  @override
+  String get habitsNotScheduledToday => 'Sem repetição programada para hoje';
+
+  @override
+  String get habitsSaveAction => 'Salvar hábito';
+
+  @override
+  String get habitsCancelAction => 'Cancelar';
+
+  @override
+  String get habitsHistoryLabel => 'Últimos 28 dias';
+
+  @override
+  String get habitsHistoryFull => 'Feito';
+
+  @override
+  String get habitsHistoryMinimum => 'Versão mínima';
+
+  @override
+  String get habitsHistoryMissed => 'Sem registro';
+
+  @override
+  String get habitsTodayCompleted => 'Feito hoje';
+
+  @override
+  String get habitsArchivedTitle => 'Hábitos arquivados';
+
+  @override
+  String get habitIconMindfulness => 'Respiração';
+
+  @override
+  String get habitIconReading => 'Leitura';
+
+  @override
+  String get habitIconMovement => 'Movimento';
+
+  @override
+  String get habitIconWater => 'Pausa';
+
+  @override
+  String get weekdayMon => 'Seg';
+
+  @override
+  String get weekdayTue => 'Ter';
+
+  @override
+  String get weekdayWed => 'Qua';
+
+  @override
+  String get weekdayThu => 'Qui';
+
+  @override
+  String get weekdayFri => 'Sex';
+
+  @override
+  String get weekdaySat => 'Sáb';
+
+  @override
+  String get weekdaySun => 'Dom';
 }

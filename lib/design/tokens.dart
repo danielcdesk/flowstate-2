@@ -11,6 +11,23 @@ abstract final class FlowTokens {
   static const double catalogMaxWidth = 720;
   static const double contentMaxWidth = 1100;
   static const double tapTarget = 56;
+  static const double iconSmall = 20;
+  static const double progressThickness = 6;
+  static const double heatmapCellSize = 14;
+  static const double heatmapCellRadius = 4;
+  static const double heatmapGap = 4;
+  static const double formMaxWidth = 560;
+  static const EdgeInsets habitRowPadding = EdgeInsets.only(bottom: space2);
+  static const EdgeInsets habitDetailPadding = EdgeInsets.fromLTRB(
+    space4,
+    0,
+    space4,
+    space4,
+  );
+  static const EdgeInsets emptyStatePadding = EdgeInsets.all(space8);
+
+  static EdgeInsets formSheetPadding(double viewInset) =>
+      EdgeInsets.fromLTRB(space4, space4, space4, viewInset + space4);
   static const double compactBreakpoint = 600;
   static const double expandedBreakpoint = 840;
 

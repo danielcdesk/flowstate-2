@@ -10,6 +10,7 @@ import 'package:flowstate/data/repositories/drift_repositories.dart';
 import 'package:flowstate/design/theme.dart';
 import 'package:flowstate/app/shell.dart';
 import 'package:flowstate/features/today/application/today_controller.dart';
+import 'package:flowstate/features/habits/application/habits_controller.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
 class FlowStateApp extends StatefulWidget {
@@ -32,10 +33,18 @@ class _FlowStateAppState extends State<FlowStateApp> {
     clock: Clock(),
     deviceId: _deviceId,
   );
+  late final HabitsController _habitsController = HabitsController(
+    habitRepository: DriftHabitRepository(_database),
+    xpRepository: DriftXpRepository(_database),
+    clock: Clock(),
+    deviceId: _deviceId,
+    onDataChanged: _todayController.load,
+  );
 
   @override
   void dispose() {
     _todayController.dispose();
+    _habitsController.dispose();
     unawaited(_database.close());
     super.dispose();
   }
@@ -49,7 +58,10 @@ class _FlowStateAppState extends State<FlowStateApp> {
       themeMode: ThemeMode.system,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: AdaptiveShell(todayController: _todayController),
+      home: AdaptiveShell(
+        todayController: _todayController,
+        habitsController: _habitsController,
+      ),
     );
   }
 }

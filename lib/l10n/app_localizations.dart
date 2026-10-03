@@ -430,6 +430,384 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Progresso do dia'**
   String get flowRingSemanticLabel;
+
+  /// No description provided for @habitsScreenTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Seus hábitos'**
+  String get habitsScreenTitle;
+
+  /// No description provided for @habitsListSectionTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Seu ritmo'**
+  String get habitsListSectionTitle;
+
+  /// No description provided for @habitsScreenSubtitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Pequenos passos, no seu ritmo.'**
+  String get habitsScreenSubtitle;
+
+  /// No description provided for @habitsCreateAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Criar hábito'**
+  String get habitsCreateAction;
+
+  /// No description provided for @habitsEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Comece com um passo pequeno'**
+  String get habitsEmptyTitle;
+
+  /// No description provided for @habitsEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Escolha algo simples que você gostaria de repetir. Você pode ajustar depois.'**
+  String get habitsEmptyMessage;
+
+  /// No description provided for @habitsLoading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Carregando seus hábitos'**
+  String get habitsLoading;
+
+  /// No description provided for @habitsLoadError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar seus hábitos. Seus dados continuam neste aparelho.'**
+  String get habitsLoadError;
+
+  /// No description provided for @habitsErrorTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar agora'**
+  String get habitsErrorTitle;
+
+  /// No description provided for @habitsSaveError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível salvar o hábito. Seus dados continuam neste aparelho.'**
+  String get habitsSaveError;
+
+  /// No description provided for @habitsRetryAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tentar novamente'**
+  String get habitsRetryAction;
+
+  /// No description provided for @habitsStreakLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sequência atual'**
+  String get habitsStreakLabel;
+
+  /// No description provided for @habitsWeekLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Nesta semana'**
+  String get habitsWeekLabel;
+
+  /// No description provided for @habitsWeekProgress.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{completed} de {target, plural, =1 {1 vez} other {{target} vezes}}'**
+  String habitsWeekProgress(int completed, int target);
+
+  /// No description provided for @habitsWeeklyTargetOption.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{count, plural, =1 {1 vez por semana} other {{count} vezes por semana}}'**
+  String habitsWeeklyTargetOption(int count);
+
+  /// No description provided for @habitsLogFullAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Marcar como feito'**
+  String get habitsLogFullAction;
+
+  /// No description provided for @habitsLogMinimumAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Fazer versão mínima'**
+  String get habitsLogMinimumAction;
+
+  /// No description provided for @habitsEditAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Editar hábito'**
+  String get habitsEditAction;
+
+  /// No description provided for @habitsArchiveAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Arquivar hábito'**
+  String get habitsArchiveAction;
+
+  /// No description provided for @habitsArchivedMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábito arquivado. Seu histórico foi preservado.'**
+  String get habitsArchivedMessage;
+
+  /// No description provided for @habitsCreateTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Criar hábito'**
+  String get habitsCreateTitle;
+
+  /// No description provided for @habitsEditTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Editar hábito'**
+  String get habitsEditTitle;
+
+  /// No description provided for @habitsNameLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Nome do hábito'**
+  String get habitsNameLabel;
+
+  /// No description provided for @habitsNameHint.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Ex.: Ler por 10 minutos'**
+  String get habitsNameHint;
+
+  /// No description provided for @habitsIconLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Ícone'**
+  String get habitsIconLabel;
+
+  /// No description provided for @habitsCategoryLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Área'**
+  String get habitsCategoryLabel;
+
+  /// No description provided for @habitsCategoryMind.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Mente'**
+  String get habitsCategoryMind;
+
+  /// No description provided for @habitsCategoryBody.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Corpo'**
+  String get habitsCategoryBody;
+
+  /// No description provided for @habitsCategoryFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Foco'**
+  String get habitsCategoryFocus;
+
+  /// No description provided for @habitsFrequencyLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Frequência'**
+  String get habitsFrequencyLabel;
+
+  /// No description provided for @habitsFrequencyDaily.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Todos os dias'**
+  String get habitsFrequencyDaily;
+
+  /// No description provided for @habitsFrequencyWeekdays.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Dias escolhidos'**
+  String get habitsFrequencyWeekdays;
+
+  /// No description provided for @habitsFrequencyWeeklyTarget.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Meta semanal'**
+  String get habitsFrequencyWeeklyTarget;
+
+  /// No description provided for @habitsWeekdaysLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Repetir em'**
+  String get habitsWeekdaysLabel;
+
+  /// No description provided for @habitsWeeklyTargetLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Vezes por semana'**
+  String get habitsWeeklyTargetLabel;
+
+  /// No description provided for @habitsCueLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Gatilho (opcional)'**
+  String get habitsCueLabel;
+
+  /// No description provided for @habitsCueHint.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Depois de...'**
+  String get habitsCueHint;
+
+  /// No description provided for @habitsMinimumLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Versão mínima (opcional)'**
+  String get habitsMinimumLabel;
+
+  /// No description provided for @habitsMinimumHint.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Ex.: Ler uma página'**
+  String get habitsMinimumHint;
+
+  /// No description provided for @habitsEssentialLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábito essencial'**
+  String get habitsEssentialLabel;
+
+  /// No description provided for @habitsReminderLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Lembrete opcional'**
+  String get habitsReminderLabel;
+
+  /// No description provided for @habitsChooseReminderAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Escolher horário'**
+  String get habitsChooseReminderAction;
+
+  /// No description provided for @habitsRemoveReminderAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Remover lembrete'**
+  String get habitsRemoveReminderAction;
+
+  /// No description provided for @habitsNotScheduledToday.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem repetição programada para hoje'**
+  String get habitsNotScheduledToday;
+
+  /// No description provided for @habitsSaveAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Salvar hábito'**
+  String get habitsSaveAction;
+
+  /// No description provided for @habitsCancelAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Cancelar'**
+  String get habitsCancelAction;
+
+  /// No description provided for @habitsHistoryLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Últimos 28 dias'**
+  String get habitsHistoryLabel;
+
+  /// No description provided for @habitsHistoryFull.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Feito'**
+  String get habitsHistoryFull;
+
+  /// No description provided for @habitsHistoryMinimum.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Versão mínima'**
+  String get habitsHistoryMinimum;
+
+  /// No description provided for @habitsHistoryMissed.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem registro'**
+  String get habitsHistoryMissed;
+
+  /// No description provided for @habitsTodayCompleted.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Feito hoje'**
+  String get habitsTodayCompleted;
+
+  /// No description provided for @habitsArchivedTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábitos arquivados'**
+  String get habitsArchivedTitle;
+
+  /// No description provided for @habitIconMindfulness.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Respiração'**
+  String get habitIconMindfulness;
+
+  /// No description provided for @habitIconReading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Leitura'**
+  String get habitIconReading;
+
+  /// No description provided for @habitIconMovement.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Movimento'**
+  String get habitIconMovement;
+
+  /// No description provided for @habitIconWater.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Pausa'**
+  String get habitIconWater;
+
+  /// No description provided for @weekdayMon.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Seg'**
+  String get weekdayMon;
+
+  /// No description provided for @weekdayTue.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Ter'**
+  String get weekdayTue;
+
+  /// No description provided for @weekdayWed.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Qua'**
+  String get weekdayWed;
+
+  /// No description provided for @weekdayThu.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Qui'**
+  String get weekdayThu;
+
+  /// No description provided for @weekdayFri.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sex'**
+  String get weekdayFri;
+
+  /// No description provided for @weekdaySat.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sáb'**
+  String get weekdaySat;
+
+  /// No description provided for @weekdaySun.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Dom'**
+  String get weekdaySun;
 }
 
 class _AppLocalizationsDelegate

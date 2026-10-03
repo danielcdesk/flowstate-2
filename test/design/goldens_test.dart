@@ -7,6 +7,8 @@ import 'package:flowstate/app/shell.dart';
 import 'package:flowstate/design/theme.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
+import '../fixtures/today_controller_fixture.dart';
+
 const Size _compactViewport = Size(390, 844);
 const Size _expandedViewport = Size(1440, 900);
 
@@ -69,6 +71,8 @@ Future<void> _pumpFlow(
     ..physicalSize = viewport
     ..devicePixelRatio = 1;
   addTearDown(tester.view.reset);
+  final fixture = createTodayControllerFixture();
+  addTearDown(fixture.dispose);
 
   await tester.pumpWidget(
     MaterialApp(
@@ -81,7 +85,7 @@ Future<void> _pumpFlow(
           return MediaQuery(
             data: MediaQuery.of(context)
                 .copyWith(textScaler: TextScaler.linear(textScaleFactor)),
-            child: const AdaptiveShell(),
+            child: AdaptiveShell(todayController: fixture.controller),
           );
         },
       ),

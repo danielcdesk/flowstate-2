@@ -170,8 +170,8 @@ abstract class AppLocalizations {
   /// No description provided for @todayLevelXp.
   ///
   /// In pt_BR, this message translates to:
-  /// **'Nível 2 · 100 XP'**
-  String get todayLevelXp;
+  /// **'Nível {level} · {xp} XP'**
+  String todayLevelXp(int level, int xp);
 
   /// No description provided for @todayProgressTitle.
   ///
@@ -182,14 +182,38 @@ abstract class AppLocalizations {
   /// No description provided for @todayProgressValue.
   ///
   /// In pt_BR, this message translates to:
-  /// **'3 de 7'**
-  String get todayProgressValue;
+  /// **'{completed} de {total}'**
+  String todayProgressValue(int completed, int total);
+
+  /// No description provided for @todayLoadError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar seu dia. Seus dados continuam neste aparelho.'**
+  String get todayLoadError;
+
+  /// No description provided for @todayActionError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível salvar essa ação. Seus dados continuam neste aparelho.'**
+  String get todayActionError;
+
+  /// No description provided for @retryAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tentar novamente'**
+  String get retryAction;
 
   /// No description provided for @nextActionTitle.
   ///
   /// In pt_BR, this message translates to:
   /// **'Próxima ação'**
   String get nextActionTitle;
+
+  /// No description provided for @nextActionEmpty.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tudo em ordem por enquanto. Adicione um hábito ou tarefa para começar.'**
+  String get nextActionEmpty;
 
   /// No description provided for @nextActionTask.
   ///
@@ -212,14 +236,32 @@ abstract class AppLocalizations {
   /// No description provided for @newHabitAction.
   ///
   /// In pt_BR, this message translates to:
-  /// **'Novo hábito'**
+  /// **'Criar hábito'**
   String get newHabitAction;
 
   /// No description provided for @newTaskAction.
   ///
   /// In pt_BR, this message translates to:
-  /// **'Nova tarefa'**
+  /// **'Criar tarefa'**
   String get newTaskAction;
+
+  /// No description provided for @quickActionComingSoon.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Este atalho será conectado em uma próxima etapa.'**
+  String get quickActionComingSoon;
+
+  /// No description provided for @actionCompleted.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Concluído. Seu progresso foi atualizado.'**
+  String get actionCompleted;
+
+  /// No description provided for @undoAction.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Desfazer'**
+  String get undoAction;
 
   /// No description provided for @startFocusAction.
   ///
@@ -238,6 +280,36 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Hábitos de hoje'**
   String get todayHabitsTitle;
+
+  /// No description provided for @todayHabitsEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem hábitos para hoje'**
+  String get todayHabitsEmptyTitle;
+
+  /// No description provided for @todayHabitsEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Quando seus hábitos estiverem configurados, eles aparecerão aqui.'**
+  String get todayHabitsEmptyMessage;
+
+  /// No description provided for @habitTapToComplete.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Toque para marcar como feito'**
+  String get habitTapToComplete;
+
+  /// No description provided for @completedStatus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Concluído'**
+  String get completedStatus;
+
+  /// No description provided for @daysStreak.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{count, plural, =0 {Começando} =1 {1 dia} other {{count} dias}}'**
+  String daysStreak(int count);
 
   /// No description provided for @habitMorning.
   ///

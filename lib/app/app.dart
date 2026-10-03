@@ -1,12 +1,44 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:clock/clock.dart';
 
 import 'package:flowstate/core/app_constants.dart';
+import 'package:flowstate/core/ids.dart';
+import 'package:flowstate/data/database/app_database.dart';
+import 'package:flowstate/data/repositories/drift_repositories.dart';
 import 'package:flowstate/design/theme.dart';
 import 'package:flowstate/app/shell.dart';
+import 'package:flowstate/features/today/application/today_controller.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
-class FlowStateApp extends StatelessWidget {
-  const FlowStateApp({super.key});
+class FlowStateApp extends StatefulWidget {
+  const FlowStateApp({this.database, super.key});
+
+  final AppDatabase? database;
+
+  @override
+  State<FlowStateApp> createState() => _FlowStateAppState();
+}
+
+class _FlowStateAppState extends State<FlowStateApp> {
+  late final AppDatabase _database = widget.database ?? AppDatabase.open();
+  late final String _deviceId = newId();
+  late final TodayController _todayController = TodayController(
+    habitRepository: DriftHabitRepository(_database),
+    taskRepository: DriftTaskRepository(_database),
+    routineRepository: DriftRoutineRepository(_database),
+    xpRepository: DriftXpRepository(_database),
+    clock: Clock(),
+    deviceId: _deviceId,
+  );
+
+  @override
+  void dispose() {
+    _todayController.dispose();
+    unawaited(_database.close());
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +49,7 @@ class FlowStateApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const AdaptiveShell(),
+      home: AdaptiveShell(todayController: _todayController),
     );
   }
 }

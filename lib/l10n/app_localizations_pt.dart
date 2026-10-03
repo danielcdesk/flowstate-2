@@ -44,16 +44,35 @@ class AppLocalizationsPt extends AppLocalizations {
   String get todaySubtitle => 'Hoje o mínimo já conta.';
 
   @override
-  String get todayLevelXp => 'Nível 2 · 100 XP';
+  String todayLevelXp(int level, int xp) {
+    return 'Nível 2 · 100 XP';
+  }
 
   @override
   String get todayProgressTitle => 'Feitos hoje';
 
   @override
-  String get todayProgressValue => '3 de 7';
+  String todayProgressValue(int completed, int total) {
+    return '3 de 7';
+  }
+
+  @override
+  String get todayLoadError =>
+      'Não foi possível carregar seu dia. Seus dados continuam neste aparelho.';
+
+  @override
+  String get todayActionError =>
+      'Não foi possível salvar essa ação. Seus dados continuam neste aparelho.';
+
+  @override
+  String get retryAction => 'Tentar novamente';
 
   @override
   String get nextActionTitle => 'Próxima ação';
+
+  @override
+  String get nextActionEmpty =>
+      'Tudo em ordem por enquanto. Adicione um hábito ou tarefa para começar.';
 
   @override
   String get nextActionTask => 'Separar 10 minutos para organizar a manhã';
@@ -71,6 +90,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get newTaskAction => 'Nova tarefa';
 
   @override
+  String get quickActionComingSoon =>
+      'Este atalho será conectado em uma próxima etapa.';
+
+  @override
+  String get actionCompleted => 'Concluído. Seu progresso foi atualizado.';
+
+  @override
+  String get undoAction => 'Desfazer';
+
+  @override
   String get startFocusAction => 'Iniciar foco';
 
   @override
@@ -78,6 +107,31 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get todayHabitsTitle => 'Hábitos de hoje';
+
+  @override
+  String get todayHabitsEmptyTitle => 'Sem hábitos para hoje';
+
+  @override
+  String get todayHabitsEmptyMessage =>
+      'Quando seus hábitos estiverem configurados, eles aparecerão aqui.';
+
+  @override
+  String get habitTapToComplete => 'Toque para marcar como feito';
+
+  @override
+  String get completedStatus => 'Concluído';
+
+  @override
+  String daysStreak(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dias',
+      one: '1 dia',
+      zero: 'Começando',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get habitMorning => 'Respirar por 2 minutos';
@@ -182,16 +236,35 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get todaySubtitle => 'Hoje o mínimo já conta.';
 
   @override
-  String get todayLevelXp => 'Nível 2 · 100 XP';
+  String todayLevelXp(int level, int xp) {
+    return 'Nível $level · $xp XP';
+  }
 
   @override
   String get todayProgressTitle => 'Feitos hoje';
 
   @override
-  String get todayProgressValue => '3 de 7';
+  String todayProgressValue(int completed, int total) {
+    return '$completed de $total';
+  }
+
+  @override
+  String get todayLoadError =>
+      'Não foi possível carregar seu dia. Seus dados continuam neste aparelho.';
+
+  @override
+  String get todayActionError =>
+      'Não foi possível salvar essa ação. Seus dados continuam neste aparelho.';
+
+  @override
+  String get retryAction => 'Tentar novamente';
 
   @override
   String get nextActionTitle => 'Próxima ação';
+
+  @override
+  String get nextActionEmpty =>
+      'Tudo em ordem por enquanto. Adicione um hábito ou tarefa para começar.';
 
   @override
   String get nextActionTask => 'Separar 10 minutos para organizar a manhã';
@@ -203,10 +276,20 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get quickActionsTitle => 'Ações rápidas';
 
   @override
-  String get newHabitAction => 'Novo hábito';
+  String get newHabitAction => 'Criar hábito';
 
   @override
-  String get newTaskAction => 'Nova tarefa';
+  String get newTaskAction => 'Criar tarefa';
+
+  @override
+  String get quickActionComingSoon =>
+      'Este atalho será conectado em uma próxima etapa.';
+
+  @override
+  String get actionCompleted => 'Concluído. Seu progresso foi atualizado.';
+
+  @override
+  String get undoAction => 'Desfazer';
 
   @override
   String get startFocusAction => 'Iniciar foco';
@@ -216,6 +299,31 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get todayHabitsTitle => 'Hábitos de hoje';
+
+  @override
+  String get todayHabitsEmptyTitle => 'Sem hábitos para hoje';
+
+  @override
+  String get todayHabitsEmptyMessage =>
+      'Quando seus hábitos estiverem configurados, eles aparecerão aqui.';
+
+  @override
+  String get habitTapToComplete => 'Toque para marcar como feito';
+
+  @override
+  String get completedStatus => 'Concluído';
+
+  @override
+  String daysStreak(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dias',
+      one: '1 dia',
+      zero: 'Começando',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get habitMorning => 'Respirar por 2 minutos';

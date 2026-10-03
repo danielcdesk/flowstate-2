@@ -5,11 +5,14 @@ import 'package:flowstate/design/components/empty_state.dart';
 import 'package:flowstate/design/components/sidebar_nav.dart';
 import 'package:flowstate/design/tokens.dart';
 import 'package:flowstate/features/today/presentation/today_page.dart';
+import 'package:flowstate/features/today/application/today_controller.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
 class AdaptiveShell extends StatefulWidget {
-  const AdaptiveShell({super.key});
+  const AdaptiveShell({required this.todayController, super.key});
+
+  final TodayController todayController;
 
   @override
   State<AdaptiveShell> createState() => _AdaptiveShellState();
@@ -37,7 +40,7 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
       Icons.insights_outlined,
     ];
     final List<Widget> pages = <Widget>[
-      const TodayPage(),
+      TodayPage(controller: widget.todayController),
       _ShellPlaceholder(label: labels[1]),
       _ShellPlaceholder(label: labels[2]),
       _ShellPlaceholder(label: labels[3]),

@@ -44,16 +44,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get todaySubtitle => 'The minimum still counts today.';
 
   @override
-  String get todayLevelXp => 'Level 2 · 100 XP';
+  String todayLevelXp(int level, int xp) {
+    return 'Level $level · $xp XP';
+  }
 
   @override
   String get todayProgressTitle => 'Done today';
 
   @override
-  String get todayProgressValue => '3 of 7';
+  String todayProgressValue(int completed, int total) {
+    return '$completed of $total';
+  }
+
+  @override
+  String get todayLoadError =>
+      'Your day could not be loaded. Your data is still on this device.';
+
+  @override
+  String get todayActionError =>
+      'This action could not be saved. Your data is still on this device.';
+
+  @override
+  String get retryAction => 'Try again';
 
   @override
   String get nextActionTitle => 'Next action';
+
+  @override
+  String get nextActionEmpty =>
+      'All clear for now. Add a habit or task to get started.';
 
   @override
   String get nextActionTask => 'Take 10 minutes to set up your morning';
@@ -65,10 +84,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quickActionsTitle => 'Quick actions';
 
   @override
-  String get newHabitAction => 'New habit';
+  String get newHabitAction => 'Create habit';
 
   @override
-  String get newTaskAction => 'New task';
+  String get newTaskAction => 'Create task';
+
+  @override
+  String get quickActionComingSoon =>
+      'This shortcut will be connected in a later step.';
+
+  @override
+  String get actionCompleted => 'Done. Your progress has been updated.';
+
+  @override
+  String get undoAction => 'Undo';
 
   @override
   String get startFocusAction => 'Start focus';
@@ -78,6 +107,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get todayHabitsTitle => 'Today\'s habits';
+
+  @override
+  String get todayHabitsEmptyTitle => 'No habits for today';
+
+  @override
+  String get todayHabitsEmptyMessage =>
+      'Your habits will appear here once they are set up.';
+
+  @override
+  String get habitTapToComplete => 'Tap to mark as done';
+
+  @override
+  String get completedStatus => 'Completed';
+
+  @override
+  String daysStreak(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+      zero: 'Getting started',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get habitMorning => 'Breathe for 2 minutes';

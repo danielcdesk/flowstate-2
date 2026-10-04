@@ -94,6 +94,116 @@ class AppLocalizationsPt extends AppLocalizations {
       'Este atalho será conectado em uma próxima etapa.';
 
   @override
+  String get focusTitle => 'Sessão de foco';
+
+  @override
+  String get focusIntro =>
+      'Escolha um tempo e avance em uma coisa de cada vez.';
+
+  @override
+  String get focusLoading => 'Carregando sua sessão de foco';
+
+  @override
+  String get focusLoadError =>
+      'Não foi possível carregar seu foco. Seus dados continuam neste aparelho.';
+
+  @override
+  String get focusSaveError =>
+      'Não foi possível salvar a sessão. Tente novamente.';
+
+  @override
+  String get focusChooseDuration => 'Por quanto tempo?';
+
+  @override
+  String focusDurationPreset(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutos',
+      one: '$minutes minuto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get focusCustomDuration => 'Personalizado';
+
+  @override
+  String get focusDurationField => 'Duração';
+
+  @override
+  String get focusMinutesUnit => 'min';
+
+  @override
+  String focusDurationLimit(int maximum) {
+    return 'Escolha de 1 a $maximum minutos.';
+  }
+
+  @override
+  String get focusLinkTask => 'Vincular a uma tarefa (opcional)';
+
+  @override
+  String get focusNoTask => 'Sem tarefa vinculada';
+
+  @override
+  String get focusLocalPersistence =>
+      'O prazo fica salvo neste aparelho e continua mesmo se você fechar o app.';
+
+  @override
+  String get focusStart => 'Iniciar foco';
+
+  @override
+  String get focusInProgress => 'Seu foco está em andamento';
+
+  @override
+  String get focusNoTaskActive => 'Um passo de cada vez';
+
+  @override
+  String focusTimerSemantics(String time) {
+    return 'Tempo restante: $time';
+  }
+
+  @override
+  String focusCountdown(String minutes, String seconds) {
+    return '$minutes:$seconds';
+  }
+
+  @override
+  String get focusKeepsRunning =>
+      'Pode sair desta tela. Ao voltar, o tempo restante será atualizado pelo horário salvo.';
+
+  @override
+  String get focusStop => 'Encerrar sessão';
+
+  @override
+  String get focusStopConfirmationTitle => 'Encerrar agora?';
+
+  @override
+  String get focusStopConfirmationMessage =>
+      'Esta sessão será encerrada sem recompensa de conclusão.';
+
+  @override
+  String focusCompletedSummary(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutos',
+      one: '$minutes minuto',
+    );
+    return 'Sessão concluída: $_temp0.';
+  }
+
+  @override
+  String focusXpPolicy(int minutes, int xp, int limit) {
+    return 'Sessões concluídas de $minutes min ou mais rendem $xp XP, em até $limit sessões por dia.';
+  }
+
+  @override
+  String focusXpEarned(int xp) {
+    return 'Você ganhou $xp XP.';
+  }
+
+  @override
   String get actionCompleted => 'Concluído. Seu progresso foi atualizado.';
 
   @override
@@ -454,6 +564,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get planEditTask => 'Editar tarefa';
+
+  @override
+  String get planStartFocus => 'Iniciar foco nesta tarefa';
 
   @override
   String get planEditRoutine => 'Editar bloco';
@@ -693,6 +806,116 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Este atalho será conectado em uma próxima etapa.';
 
   @override
+  String get focusTitle => 'Sessão de foco';
+
+  @override
+  String get focusIntro =>
+      'Escolha um tempo e avance em uma coisa de cada vez.';
+
+  @override
+  String get focusLoading => 'Carregando sua sessão de foco';
+
+  @override
+  String get focusLoadError =>
+      'Não foi possível carregar seu foco. Seus dados continuam neste aparelho.';
+
+  @override
+  String get focusSaveError =>
+      'Não foi possível salvar a sessão. Tente novamente.';
+
+  @override
+  String get focusChooseDuration => 'Por quanto tempo?';
+
+  @override
+  String focusDurationPreset(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutos',
+      one: '$minutes minuto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get focusCustomDuration => 'Personalizado';
+
+  @override
+  String get focusDurationField => 'Duração';
+
+  @override
+  String get focusMinutesUnit => 'min';
+
+  @override
+  String focusDurationLimit(int maximum) {
+    return 'Escolha de 1 a $maximum minutos.';
+  }
+
+  @override
+  String get focusLinkTask => 'Vincular a uma tarefa (opcional)';
+
+  @override
+  String get focusNoTask => 'Sem tarefa vinculada';
+
+  @override
+  String get focusLocalPersistence =>
+      'O prazo fica salvo neste aparelho e continua mesmo se você fechar o app.';
+
+  @override
+  String get focusStart => 'Iniciar foco';
+
+  @override
+  String get focusInProgress => 'Seu foco está em andamento';
+
+  @override
+  String get focusNoTaskActive => 'Um passo de cada vez';
+
+  @override
+  String focusTimerSemantics(String time) {
+    return 'Tempo restante: $time';
+  }
+
+  @override
+  String focusCountdown(String minutes, String seconds) {
+    return '$minutes:$seconds';
+  }
+
+  @override
+  String get focusKeepsRunning =>
+      'Pode sair desta tela. Ao voltar, o tempo restante será atualizado pelo horário salvo.';
+
+  @override
+  String get focusStop => 'Encerrar sessão';
+
+  @override
+  String get focusStopConfirmationTitle => 'Encerrar agora?';
+
+  @override
+  String get focusStopConfirmationMessage =>
+      'Esta sessão será encerrada sem recompensa de conclusão.';
+
+  @override
+  String focusCompletedSummary(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutos',
+      one: '$minutes minuto',
+    );
+    return 'Sessão concluída: $_temp0.';
+  }
+
+  @override
+  String focusXpPolicy(int minutes, int xp, int limit) {
+    return 'Sessões concluídas de $minutes min ou mais rendem $xp XP, em até $limit sessões por dia.';
+  }
+
+  @override
+  String focusXpEarned(int xp) {
+    return 'Você ganhou $xp XP.';
+  }
+
+  @override
   String get actionCompleted => 'Concluído. Seu progresso foi atualizado.';
 
   @override
@@ -1053,6 +1276,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get planEditTask => 'Editar tarefa';
+
+  @override
+  String get planStartFocus => 'Iniciar foco nesta tarefa';
 
   @override
   String get planEditRoutine => 'Editar bloco';

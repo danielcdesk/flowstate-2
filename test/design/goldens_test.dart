@@ -11,6 +11,7 @@ import 'package:flowstate/domain/habits/habit.dart';
 import 'package:flowstate/domain/recurrence/recurrence.dart';
 import 'package:flowstate/features/habits/presentation/habits_page.dart';
 import 'package:flowstate/features/plan/presentation/plan_page.dart';
+import 'package:flowstate/features/focus/presentation/focus_session_sheet.dart';
 import 'package:flowstate/domain/tasks/task.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
@@ -161,6 +162,53 @@ void main() {
       matchesGoldenFile('goldens/plan-compact-light-text-200.png'),
     );
   }, skip: Platform.isWindows);
+
+  testWidgets('Focus compact light golden', (WidgetTester tester) async {
+    await _pumpFocus(tester, _compactViewport, FlowTheme.light());
+    await expectLater(
+      find.byType(FocusSessionSheet),
+      matchesGoldenFile('goldens/focus-compact-light.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Focus compact dark golden', (WidgetTester tester) async {
+    await _pumpFocus(tester, _compactViewport, FlowTheme.dark());
+    await expectLater(
+      find.byType(FocusSessionSheet),
+      matchesGoldenFile('goldens/focus-compact-dark.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Focus expanded light golden', (WidgetTester tester) async {
+    await _pumpFocus(tester, _expandedViewport, FlowTheme.light());
+    await expectLater(
+      find.byType(FocusSessionSheet),
+      matchesGoldenFile('goldens/focus-expanded-light.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Focus expanded dark golden', (WidgetTester tester) async {
+    await _pumpFocus(tester, _expandedViewport, FlowTheme.dark());
+    await expectLater(
+      find.byType(FocusSessionSheet),
+      matchesGoldenFile('goldens/focus-expanded-dark.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Focus compact light at 200 percent text', (
+    WidgetTester tester,
+  ) async {
+    await _pumpFocus(
+      tester,
+      _compactViewport,
+      FlowTheme.light(),
+      textScaleFactor: 2,
+    );
+    await expectLater(
+      find.byType(FocusSessionSheet),
+      matchesGoldenFile('goldens/focus-compact-light-text-200.png'),
+    );
+  }, skip: Platform.isWindows);
 }
 
 Future<void> _pumpFlow(
@@ -308,6 +356,38 @@ Future<void> _pumpPlan(
           data: MediaQuery.of(context)
               .copyWith(textScaler: TextScaler.linear(textScaleFactor)),
           child: Scaffold(body: PlanPage(controller: fixture.planController)),
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
+Future<void> _pumpFocus(
+  WidgetTester tester,
+  Size viewport,
+  ThemeData theme, {
+  double textScaleFactor = 1,
+}) async {
+  tester.view
+    ..physicalSize = viewport
+    ..devicePixelRatio = 1;
+  addTearDown(tester.view.reset);
+  final fixture = createTodayControllerFixture();
+  addTearDown(fixture.dispose);
+  await tester.pumpWidget(
+    MaterialApp(
+      theme: theme,
+      locale: const Locale('pt', 'BR'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Builder(
+        builder: (BuildContext context) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScaleFactor)),
+          child: Scaffold(
+            body: FocusSessionSheet(controller: fixture.focusController),
+          ),
         ),
       ),
     ),

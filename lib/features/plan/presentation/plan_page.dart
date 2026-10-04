@@ -12,9 +12,10 @@ import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
 class PlanPage extends StatefulWidget {
-  const PlanPage({required this.controller, super.key});
+  const PlanPage({required this.controller, this.onFocusTask, super.key});
 
   final PlanController controller;
+  final ValueChanged<Task>? onFocusTask;
 
   @override
   State<PlanPage> createState() => _PlanPageState();
@@ -198,6 +199,9 @@ class _PlanPageState extends State<PlanPage> {
                 onComplete: () => _completeTask(controller, task, l10n),
                 onEdit: () => _editTask(context, l10n, controller, task),
                 onArchive: () => _archiveTask(context, l10n, controller, task),
+                onFocus: widget.onFocusTask == null
+                    ? null
+                    : () => widget.onFocusTask?.call(task),
               ),
         ],
       ),
@@ -617,6 +621,7 @@ class _TaskRow extends StatelessWidget {
     required this.onComplete,
     required this.onEdit,
     required this.onArchive,
+    this.onFocus,
   });
 
   final Task task;
@@ -625,6 +630,7 @@ class _TaskRow extends StatelessWidget {
   final VoidCallback onComplete;
   final VoidCallback onEdit;
   final VoidCallback onArchive;
+  final VoidCallback? onFocus;
 
   @override
   Widget build(BuildContext context) {
@@ -644,20 +650,31 @@ class _TaskRow extends StatelessWidget {
         ),
         title: Text(task.title),
         subtitle: Text(details),
-        trailing: PopupMenuButton<String>(
-          tooltip: l10n.planEditTask,
-          onSelected: (String action) {
-            if (action == 'edit') onEdit();
-            if (action == 'archive') onArchive();
-          },
-          itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-            PopupMenuItem<String>(
-              value: 'edit',
-              child: Text(l10n.planEditTask),
-            ),
-            PopupMenuItem<String>(
-              value: 'archive',
-              child: Text(l10n.planArchiveTask),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            if (onFocus != null)
+              IconButton(
+                tooltip: l10n.planStartFocus,
+                onPressed: onFocus,
+                icon: const Icon(Icons.center_focus_strong),
+              ),
+            PopupMenuButton<String>(
+              tooltip: l10n.planEditTask,
+              onSelected: (String action) {
+                if (action == 'edit') onEdit();
+                if (action == 'archive') onArchive();
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                PopupMenuItem<String>(
+                  value: 'edit',
+                  child: Text(l10n.planEditTask),
+                ),
+                PopupMenuItem<String>(
+                  value: 'archive',
+                  child: Text(l10n.planArchiveTask),
+                ),
+              ],
             ),
           ],
         ),

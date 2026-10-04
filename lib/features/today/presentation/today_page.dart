@@ -17,9 +17,10 @@ import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
 class TodayPage extends StatefulWidget {
-  const TodayPage({required this.controller, super.key});
+  const TodayPage({required this.controller, this.onStartFocus, super.key});
 
   final TodayController controller;
+  final VoidCallback? onStartFocus;
 
   @override
   State<TodayPage> createState() => _TodayPageState();
@@ -150,7 +151,9 @@ class _TodayPageState extends State<TodayPage> {
                   QuickAction(
                     label: localizations.startFocusAction,
                     icon: Icons.center_focus_strong,
-                    onPressed: () => _showComingSoon(localizations),
+                    onPressed:
+                        widget.onStartFocus ??
+                        () => _showComingSoon(localizations),
                   ),
                   QuickAction(
                     label: localizations.startWorkoutAction,

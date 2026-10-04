@@ -94,6 +94,115 @@ class AppLocalizationsEn extends AppLocalizations {
       'This shortcut will be connected in a later step.';
 
   @override
+  String get focusTitle => 'Focus session';
+
+  @override
+  String get focusIntro =>
+      'Choose a duration and move forward one thing at a time.';
+
+  @override
+  String get focusLoading => 'Loading your focus session';
+
+  @override
+  String get focusLoadError =>
+      'We couldn\'t load your focus session. Your data is still on this device.';
+
+  @override
+  String get focusSaveError => 'We couldn\'t save the session. Try again.';
+
+  @override
+  String get focusChooseDuration => 'How long?';
+
+  @override
+  String focusDurationPreset(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '$minutes minute',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get focusCustomDuration => 'Custom';
+
+  @override
+  String get focusDurationField => 'Duration';
+
+  @override
+  String get focusMinutesUnit => 'min';
+
+  @override
+  String focusDurationLimit(int maximum) {
+    return 'Choose from 1 to $maximum minutes.';
+  }
+
+  @override
+  String get focusLinkTask => 'Link to a task (optional)';
+
+  @override
+  String get focusNoTask => 'No linked task';
+
+  @override
+  String get focusLocalPersistence =>
+      'The deadline is saved on this device and keeps running if you close the app.';
+
+  @override
+  String get focusStart => 'Start focus';
+
+  @override
+  String get focusInProgress => 'Your focus session is underway';
+
+  @override
+  String get focusNoTaskActive => 'One step at a time';
+
+  @override
+  String focusTimerSemantics(String time) {
+    return 'Time remaining: $time';
+  }
+
+  @override
+  String focusCountdown(String minutes, String seconds) {
+    return '$minutes:$seconds';
+  }
+
+  @override
+  String get focusKeepsRunning =>
+      'You can leave this screen. When you return, the time remaining will be recalculated from the saved deadline.';
+
+  @override
+  String get focusStop => 'End session';
+
+  @override
+  String get focusStopConfirmationTitle => 'End now?';
+
+  @override
+  String get focusStopConfirmationMessage =>
+      'This session will end without a completion reward.';
+
+  @override
+  String focusCompletedSummary(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '$minutes minute',
+    );
+    return 'Session complete: $_temp0.';
+  }
+
+  @override
+  String focusXpPolicy(int minutes, int xp, int limit) {
+    return 'Completed sessions of $minutes min or more earn $xp XP, up to $limit sessions per day.';
+  }
+
+  @override
+  String focusXpEarned(int xp) {
+    return 'You earned $xp XP.';
+  }
+
+  @override
   String get actionCompleted => 'Done. Your progress has been updated.';
 
   @override
@@ -455,6 +564,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get planEditTask => 'Edit task';
+
+  @override
+  String get planStartFocus => 'Start focus on this task';
 
   @override
   String get planEditRoutine => 'Edit block';

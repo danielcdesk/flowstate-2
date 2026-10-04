@@ -18,6 +18,8 @@ abstract final class FlowTokens {
   static const double heatmapGap = 4;
   static const double formMaxWidth = 560;
   static const double habitHeaderStackWidth = 420;
+  static const double focusSheetMaxWidth = 560;
+  static const double focusTimerSize = 240;
   static const double accessibilityLargeTextScale = 1.4;
   static const EdgeInsets habitRowPadding = EdgeInsets.only(bottom: space2);
   static const EdgeInsets planWeekdayPadding = EdgeInsets.symmetric(
@@ -33,6 +35,8 @@ abstract final class FlowTokens {
     space4,
   );
   static const EdgeInsets emptyStatePadding = EdgeInsets.all(space8);
+  static const EdgeInsets focusSheetPadding = EdgeInsets.all(space6);
+  static const EdgeInsets focusLoadingPadding = EdgeInsets.all(space8);
 
   static EdgeInsets formSheetPadding(double viewInset) =>
       EdgeInsets.fromLTRB(space4, space4, space4, viewInset + space4);

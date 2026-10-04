@@ -94,6 +94,115 @@ class AppLocalizationsEs extends AppLocalizations {
       'Este acceso se conectará en una próxima etapa.';
 
   @override
+  String get focusTitle => 'Sesión de concentración';
+
+  @override
+  String get focusIntro => 'Elige una duración y avanza de una cosa a la vez.';
+
+  @override
+  String get focusLoading => 'Cargando tu sesión de concentración';
+
+  @override
+  String get focusLoadError =>
+      'No pudimos cargar tu sesión. Tus datos siguen en este dispositivo.';
+
+  @override
+  String get focusSaveError =>
+      'No pudimos guardar la sesión. Inténtalo de nuevo.';
+
+  @override
+  String get focusChooseDuration => '¿Por cuánto tiempo?';
+
+  @override
+  String focusDurationPreset(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutos',
+      one: '$minutes minuto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get focusCustomDuration => 'Personalizada';
+
+  @override
+  String get focusDurationField => 'Duración';
+
+  @override
+  String get focusMinutesUnit => 'min';
+
+  @override
+  String focusDurationLimit(int maximum) {
+    return 'Elige entre 1 y $maximum minutos.';
+  }
+
+  @override
+  String get focusLinkTask => 'Vincular a una tarea (opcional)';
+
+  @override
+  String get focusNoTask => 'Sin tarea vinculada';
+
+  @override
+  String get focusLocalPersistence =>
+      'El plazo se guarda en este dispositivo y sigue avanzando si cierras la app.';
+
+  @override
+  String get focusStart => 'Iniciar concentración';
+
+  @override
+  String get focusInProgress => 'Tu sesión está en marcha';
+
+  @override
+  String get focusNoTaskActive => 'Un paso a la vez';
+
+  @override
+  String focusTimerSemantics(String time) {
+    return 'Tiempo restante: $time';
+  }
+
+  @override
+  String focusCountdown(String minutes, String seconds) {
+    return '$minutes:$seconds';
+  }
+
+  @override
+  String get focusKeepsRunning =>
+      'Puedes salir de esta pantalla. Al volver, el tiempo restante se calculará con el plazo guardado.';
+
+  @override
+  String get focusStop => 'Finalizar sesión';
+
+  @override
+  String get focusStopConfirmationTitle => '¿Finalizar ahora?';
+
+  @override
+  String get focusStopConfirmationMessage =>
+      'La sesión terminará sin recompensa por completarla.';
+
+  @override
+  String focusCompletedSummary(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutos',
+      one: '$minutes minuto',
+    );
+    return 'Sesión completada: $_temp0.';
+  }
+
+  @override
+  String focusXpPolicy(int minutes, int xp, int limit) {
+    return 'Las sesiones completadas de $minutes min o más dan $xp XP, hasta $limit sesiones al día.';
+  }
+
+  @override
+  String focusXpEarned(int xp) {
+    return 'Has ganado $xp XP.';
+  }
+
+  @override
   String get actionCompleted => 'Hecho. Tu progreso se ha actualizado.';
 
   @override
@@ -455,6 +564,9 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get planEditTask => 'Editar tarea';
+
+  @override
+  String get planStartFocus => 'Iniciar concentración en esta tarea';
 
   @override
   String get planEditRoutine => 'Editar bloque';

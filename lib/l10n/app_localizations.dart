@@ -251,6 +251,162 @@ abstract class AppLocalizations {
   /// **'Este atalho será conectado em uma próxima etapa.'**
   String get quickActionComingSoon;
 
+  /// No description provided for @focusTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sessão de foco'**
+  String get focusTitle;
+
+  /// No description provided for @focusIntro.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Escolha um tempo e avance em uma coisa de cada vez.'**
+  String get focusIntro;
+
+  /// No description provided for @focusLoading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Carregando sua sessão de foco'**
+  String get focusLoading;
+
+  /// No description provided for @focusLoadError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar seu foco. Seus dados continuam neste aparelho.'**
+  String get focusLoadError;
+
+  /// No description provided for @focusSaveError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível salvar a sessão. Tente novamente.'**
+  String get focusSaveError;
+
+  /// No description provided for @focusChooseDuration.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Por quanto tempo?'**
+  String get focusChooseDuration;
+
+  /// No description provided for @focusDurationPreset.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{minutes, plural, one{{minutes} minuto} other{{minutes} minutos}}'**
+  String focusDurationPreset(int minutes);
+
+  /// No description provided for @focusCustomDuration.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Personalizado'**
+  String get focusCustomDuration;
+
+  /// No description provided for @focusDurationField.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Duração'**
+  String get focusDurationField;
+
+  /// No description provided for @focusMinutesUnit.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'min'**
+  String get focusMinutesUnit;
+
+  /// No description provided for @focusDurationLimit.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Escolha de 1 a {maximum} minutos.'**
+  String focusDurationLimit(int maximum);
+
+  /// No description provided for @focusLinkTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Vincular a uma tarefa (opcional)'**
+  String get focusLinkTask;
+
+  /// No description provided for @focusNoTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem tarefa vinculada'**
+  String get focusNoTask;
+
+  /// No description provided for @focusLocalPersistence.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'O prazo fica salvo neste aparelho e continua mesmo se você fechar o app.'**
+  String get focusLocalPersistence;
+
+  /// No description provided for @focusStart.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Iniciar foco'**
+  String get focusStart;
+
+  /// No description provided for @focusInProgress.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Seu foco está em andamento'**
+  String get focusInProgress;
+
+  /// No description provided for @focusNoTaskActive.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Um passo de cada vez'**
+  String get focusNoTaskActive;
+
+  /// No description provided for @focusTimerSemantics.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tempo restante: {time}'**
+  String focusTimerSemantics(String time);
+
+  /// No description provided for @focusCountdown.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{minutes}:{seconds}'**
+  String focusCountdown(String minutes, String seconds);
+
+  /// No description provided for @focusKeepsRunning.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Pode sair desta tela. Ao voltar, o tempo restante será atualizado pelo horário salvo.'**
+  String get focusKeepsRunning;
+
+  /// No description provided for @focusStop.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Encerrar sessão'**
+  String get focusStop;
+
+  /// No description provided for @focusStopConfirmationTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Encerrar agora?'**
+  String get focusStopConfirmationTitle;
+
+  /// No description provided for @focusStopConfirmationMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Esta sessão será encerrada sem recompensa de conclusão.'**
+  String get focusStopConfirmationMessage;
+
+  /// No description provided for @focusCompletedSummary.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sessão concluída: {minutes, plural, one{{minutes} minuto} other{{minutes} minutos}}.'**
+  String focusCompletedSummary(int minutes);
+
+  /// No description provided for @focusXpPolicy.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sessões concluídas de {minutes} min ou mais rendem {xp} XP, em até {limit} sessões por dia.'**
+  String focusXpPolicy(int minutes, int xp, int limit);
+
+  /// No description provided for @focusXpEarned.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Você ganhou {xp} XP.'**
+  String focusXpEarned(int xp);
+
   /// No description provided for @actionCompleted.
   ///
   /// In pt_BR, this message translates to:
@@ -904,6 +1060,12 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Editar tarefa'**
   String get planEditTask;
+
+  /// No description provided for @planStartFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Iniciar foco nesta tarefa'**
+  String get planStartFocus;
 
   /// No description provided for @planEditRoutine.
   ///

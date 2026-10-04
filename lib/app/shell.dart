@@ -10,6 +10,8 @@ import 'package:flowstate/features/habits/application/habits_controller.dart';
 import 'package:flowstate/features/habits/presentation/habits_page.dart';
 import 'package:flowstate/features/plan/application/plan_controller.dart';
 import 'package:flowstate/features/plan/presentation/plan_page.dart';
+import 'package:flowstate/features/focus/application/focus_controller.dart';
+import 'package:flowstate/features/focus/presentation/focus_session_sheet.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
@@ -18,12 +20,14 @@ class AdaptiveShell extends StatefulWidget {
     required this.todayController,
     required this.habitsController,
     required this.planController,
+    this.focusController,
     super.key,
   });
 
   final TodayController todayController;
   final HabitsController habitsController;
   final PlanController planController;
+  final FocusController? focusController;
 
   @override
   State<AdaptiveShell> createState() => _AdaptiveShellState();
@@ -51,8 +55,18 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
       Icons.insights_outlined,
     ];
     final List<Widget> pages = <Widget>[
-      TodayPage(controller: widget.todayController),
-      PlanPage(controller: widget.planController),
+      TodayPage(
+        controller: widget.todayController,
+        onStartFocus: widget.focusController == null
+            ? null
+            : () => _showFocus(context),
+      ),
+      PlanPage(
+        controller: widget.planController,
+        onFocusTask: widget.focusController == null
+            ? null
+            : (task) => _showFocus(context, taskId: task.id),
+      ),
       HabitsPage(controller: widget.habitsController),
       _ShellPlaceholder(label: labels[3]),
       _ShellPlaceholder(label: labels[4]),
@@ -128,6 +142,18 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  Future<void> _showFocus(BuildContext context, {String? taskId}) async {
+    final FocusController? controller = widget.focusController;
+    if (controller == null) return;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (BuildContext context) =>
+          FocusSessionSheet(controller: controller, initialTaskId: taskId),
+    );
   }
 }
 

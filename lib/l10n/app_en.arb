@@ -27,6 +27,39 @@
   "newHabitAction": "Create habit",
   "newTaskAction": "Create task",
   "quickActionComingSoon": "This shortcut will be connected in a later step.",
+  "focusTitle": "Focus session",
+  "focusIntro": "Choose a duration and move forward one thing at a time.",
+  "focusLoading": "Loading your focus session",
+  "focusLoadError": "We couldn't load your focus session. Your data is still on this device.",
+  "focusSaveError": "We couldn't save the session. Try again.",
+  "focusChooseDuration": "How long?",
+  "focusDurationPreset": "{minutes, plural, one{{minutes} minute} other{{minutes} minutes}}",
+  "@focusDurationPreset": {"placeholders": {"minutes": {"type": "int"}}},
+  "focusCustomDuration": "Custom",
+  "focusDurationField": "Duration",
+  "focusMinutesUnit": "min",
+  "focusDurationLimit": "Choose from 1 to {maximum} minutes.",
+  "@focusDurationLimit": {"placeholders": {"maximum": {"type": "int"}}},
+  "focusLinkTask": "Link to a task (optional)",
+  "focusNoTask": "No linked task",
+  "focusLocalPersistence": "The deadline is saved on this device and keeps running if you close the app.",
+  "focusStart": "Start focus",
+  "focusInProgress": "Your focus session is underway",
+  "focusNoTaskActive": "One step at a time",
+  "focusTimerSemantics": "Time remaining: {time}",
+  "@focusTimerSemantics": {"placeholders": {"time": {"type": "String"}}},
+  "focusCountdown": "{minutes}:{seconds}",
+  "@focusCountdown": {"placeholders": {"minutes": {"type": "String"}, "seconds": {"type": "String"}}},
+  "focusKeepsRunning": "You can leave this screen. When you return, the time remaining will be recalculated from the saved deadline.",
+  "focusStop": "End session",
+  "focusStopConfirmationTitle": "End now?",
+  "focusStopConfirmationMessage": "This session will end without a completion reward.",
+  "focusCompletedSummary": "Session complete: {minutes, plural, one{{minutes} minute} other{{minutes} minutes}}.",
+  "@focusCompletedSummary": {"placeholders": {"minutes": {"type": "int"}}},
+  "focusXpPolicy": "Completed sessions of {minutes} min or more earn {xp} XP, up to {limit} sessions per day.",
+  "@focusXpPolicy": {"placeholders": {"minutes": {"type": "int"}, "xp": {"type": "int"}, "limit": {"type": "int"}}},
+  "focusXpEarned": "You earned {xp} XP.",
+  "@focusXpEarned": {"placeholders": {"xp": {"type": "int"}}},
   "actionCompleted": "Done. Your progress has been updated.",
   "undoAction": "Undo",
   "startFocusAction": "Start focus",
@@ -138,7 +171,8 @@
   ,"planSlotsEmpty": "No 25-minute openings are available in this window."
   ,"planCreateTask": "Create task"
   ,"planCreateRoutine": "Create block"
-  ,"planEditTask": "Edit task"
+  ,"planEditTask": "Edit task",
+  "planStartFocus": "Start focus on this task"
   ,"planEditRoutine": "Edit block"
   ,"planArchiveTask": "Archive task"
   ,"planArchiveRoutine": "Archive block"

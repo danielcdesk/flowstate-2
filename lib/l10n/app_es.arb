@@ -27,6 +27,39 @@
   "newHabitAction": "Crear hábito",
   "newTaskAction": "Crear tarea",
   "quickActionComingSoon": "Este acceso se conectará en una próxima etapa.",
+  "focusTitle": "Sesión de concentración",
+  "focusIntro": "Elige una duración y avanza de una cosa a la vez.",
+  "focusLoading": "Cargando tu sesión de concentración",
+  "focusLoadError": "No pudimos cargar tu sesión. Tus datos siguen en este dispositivo.",
+  "focusSaveError": "No pudimos guardar la sesión. Inténtalo de nuevo.",
+  "focusChooseDuration": "¿Por cuánto tiempo?",
+  "focusDurationPreset": "{minutes, plural, one{{minutes} minuto} other{{minutes} minutos}}",
+  "@focusDurationPreset": {"placeholders": {"minutes": {"type": "int"}}},
+  "focusCustomDuration": "Personalizada",
+  "focusDurationField": "Duración",
+  "focusMinutesUnit": "min",
+  "focusDurationLimit": "Elige entre 1 y {maximum} minutos.",
+  "@focusDurationLimit": {"placeholders": {"maximum": {"type": "int"}}},
+  "focusLinkTask": "Vincular a una tarea (opcional)",
+  "focusNoTask": "Sin tarea vinculada",
+  "focusLocalPersistence": "El plazo se guarda en este dispositivo y sigue avanzando si cierras la app.",
+  "focusStart": "Iniciar concentración",
+  "focusInProgress": "Tu sesión está en marcha",
+  "focusNoTaskActive": "Un paso a la vez",
+  "focusTimerSemantics": "Tiempo restante: {time}",
+  "@focusTimerSemantics": {"placeholders": {"time": {"type": "String"}}},
+  "focusCountdown": "{minutes}:{seconds}",
+  "@focusCountdown": {"placeholders": {"minutes": {"type": "String"}, "seconds": {"type": "String"}}},
+  "focusKeepsRunning": "Puedes salir de esta pantalla. Al volver, el tiempo restante se calculará con el plazo guardado.",
+  "focusStop": "Finalizar sesión",
+  "focusStopConfirmationTitle": "¿Finalizar ahora?",
+  "focusStopConfirmationMessage": "La sesión terminará sin recompensa por completarla.",
+  "focusCompletedSummary": "Sesión completada: {minutes, plural, one{{minutes} minuto} other{{minutes} minutos}}.",
+  "@focusCompletedSummary": {"placeholders": {"minutes": {"type": "int"}}},
+  "focusXpPolicy": "Las sesiones completadas de {minutes} min o más dan {xp} XP, hasta {limit} sesiones al día.",
+  "@focusXpPolicy": {"placeholders": {"minutes": {"type": "int"}, "xp": {"type": "int"}, "limit": {"type": "int"}}},
+  "focusXpEarned": "Has ganado {xp} XP.",
+  "@focusXpEarned": {"placeholders": {"xp": {"type": "int"}}},
   "actionCompleted": "Hecho. Tu progreso se ha actualizado.",
   "undoAction": "Deshacer",
   "startFocusAction": "Iniciar enfoque",
@@ -139,6 +172,7 @@
   ,"planCreateTask": "Crear tarea"
   ,"planCreateRoutine": "Crear bloque"
   ,"planEditTask": "Editar tarea"
+  ,"planStartFocus": "Iniciar concentración en esta tarea"
   ,"planEditRoutine": "Editar bloque"
   ,"planArchiveTask": "Archivar tarea"
   ,"planArchiveRoutine": "Archivar bloque"

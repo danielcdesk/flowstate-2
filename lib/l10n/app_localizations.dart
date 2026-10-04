@@ -1324,6 +1324,210 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Prioridade {priority}'**
   String planPrioritySemantics(String priority);
+
+  /// No description provided for @evolutionTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sua evolução'**
+  String get evolutionTitle;
+
+  /// No description provided for @evolutionSubtitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Veja o que seu histórico já está construindo, sem comparação e sem culpa.'**
+  String get evolutionSubtitle;
+
+  /// No description provided for @evolutionLoading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Carregando sua evolução'**
+  String get evolutionLoading;
+
+  /// No description provided for @evolutionLoadError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar sua evolução. Seus dados continuam neste aparelho.'**
+  String get evolutionLoadError;
+
+  /// No description provided for @evolutionLevelXp.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Nível {level} · {xp} XP acumulados'**
+  String evolutionLevelXp(int level, int xp);
+
+  /// No description provided for @evolutionRadarTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Radar de habilidades'**
+  String get evolutionRadarTitle;
+
+  /// No description provided for @evolutionRadarAccessible.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Radar de habilidades calculado pelo seu histórico'**
+  String get evolutionRadarAccessible;
+
+  /// No description provided for @evolutionSkillHabits.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábitos'**
+  String get evolutionSkillHabits;
+
+  /// No description provided for @evolutionSkillPlanning.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Planejamento'**
+  String get evolutionSkillPlanning;
+
+  /// No description provided for @evolutionSkillFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Foco'**
+  String get evolutionSkillFocus;
+
+  /// No description provided for @evolutionWeeklyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Revisão das últimas duas semanas'**
+  String get evolutionWeeklyTitle;
+
+  /// No description provided for @evolutionWeeklyEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sua revisão ainda está se formando'**
+  String get evolutionWeeklyEmptyTitle;
+
+  /// No description provided for @evolutionWeeklyEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Depois de 14 dias completos, aparecem padrões úteis do seu ritmo.'**
+  String get evolutionWeeklyEmptyMessage;
+
+  /// No description provided for @evolutionWeeklyNoInsights.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Ainda não há um padrão forte para destacar.'**
+  String get evolutionWeeklyNoInsights;
+
+  /// No description provided for @evolutionInsightStrongestDay.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Dia mais consistente'**
+  String get evolutionInsightStrongestDay;
+
+  /// No description provided for @evolutionInsightMostMissedHabit.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábito que mais pede atenção'**
+  String get evolutionInsightMostMissedHabit;
+
+  /// No description provided for @evolutionInsightTypicalTime.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Horário mais comum'**
+  String get evolutionInsightTypicalTime;
+
+  /// No description provided for @evolutionInsightBestFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Melhor horário de foco'**
+  String get evolutionInsightBestFocus;
+
+  /// No description provided for @evolutionInsightBalance.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Treino e recuperação'**
+  String get evolutionInsightBalance;
+
+  /// No description provided for @evolutionInsightWeekdayValue.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Dia da semana {weekday}'**
+  String evolutionInsightWeekdayValue(String weekday);
+
+  /// No description provided for @evolutionInsightMinuteValue.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Por volta do minuto {minute} do dia'**
+  String evolutionInsightMinuteValue(String minute);
+
+  /// No description provided for @evolutionInsightHourValue.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Por volta de {hour}h'**
+  String evolutionInsightHourValue(String hour);
+
+  /// No description provided for @evolutionInsightBalanceValue.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{workout} treino · {recovery} recuperação'**
+  String evolutionInsightBalanceValue(int workout, int recovery);
+
+  /// No description provided for @evolutionAnnualTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Retrospectiva {year}'**
+  String evolutionAnnualTitle(int year);
+
+  /// No description provided for @evolutionAnnualLocked.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Retrospectiva anual bloqueada até o fim do ano'**
+  String get evolutionAnnualLocked;
+
+  /// No description provided for @evolutionAnnualLockedTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sua história ainda está acontecendo'**
+  String get evolutionAnnualLockedTitle;
+
+  /// No description provided for @evolutionAnnualLockedMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'No começo de {yearPlusOne}, você poderá percorrer seus marcos deste ano.'**
+  String evolutionAnnualLockedMessage(int yearPlusOne);
+
+  /// No description provided for @evolutionAnnualEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Um ano para começar'**
+  String get evolutionAnnualEmptyTitle;
+
+  /// No description provided for @evolutionAnnualEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Quando houver registros, eles aparecerão aqui em uma linha do tempo.'**
+  String get evolutionAnnualEmptyMessage;
+
+  /// No description provided for @evolutionEventDate.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Em {date}'**
+  String evolutionEventDate(String date);
+
+  /// No description provided for @evolutionEventHabit.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábito concluído'**
+  String get evolutionEventHabit;
+
+  /// No description provided for @evolutionEventTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tarefa concluída'**
+  String get evolutionEventTask;
+
+  /// No description provided for @evolutionEventFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Foco por {minutes} minutos'**
+  String evolutionEventFocus(int minutes);
+
+  /// No description provided for @evolutionEventMilestone.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Marco pessoal'**
+  String get evolutionEventMilestone;
 }
 
 class _AppLocalizationsDelegate

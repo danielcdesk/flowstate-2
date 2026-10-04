@@ -220,4 +220,47 @@
   ,"planTaskNoDate": "Sin fecha definida"
   ,"planPrioritySemantics": "Prioridad {priority}"
   ,"@planPrioritySemantics": {"placeholders": {"priority": {"type": "String"}}}
+  ,"evolutionTitle": "Tu evolución"
+  ,"evolutionSubtitle": "Mira lo que tu historial está construyendo, sin comparación ni culpa."
+  ,"evolutionLoading": "Cargando tu evolución"
+  ,"evolutionLoadError": "No se pudo cargar tu evolución. Tus datos siguen en este dispositivo."
+  ,"evolutionLevelXp": "Nivel {level} · {xp} XP acumulados"
+  ,"@evolutionLevelXp": {"placeholders": {"level": {"type": "int"}, "xp": {"type": "int"}}}
+  ,"evolutionRadarTitle": "Radar de habilidades"
+  ,"evolutionRadarAccessible": "Radar de habilidades calculado con tu historial"
+  ,"evolutionSkillHabits": "Hábitos"
+  ,"evolutionSkillPlanning": "Planificación"
+  ,"evolutionSkillFocus": "Enfoque"
+  ,"evolutionWeeklyTitle": "Revisión de las últimas dos semanas"
+  ,"evolutionWeeklyEmptyTitle": "Tu revisión se está formando"
+  ,"evolutionWeeklyEmptyMessage": "Los patrones útiles aparecen después de 14 días completos."
+  ,"evolutionWeeklyNoInsights": "Todavía no hay un patrón fuerte que destacar."
+  ,"evolutionInsightStrongestDay": "Día más constante"
+  ,"evolutionInsightMostMissedHabit": "Hábito que necesita atención"
+  ,"evolutionInsightTypicalTime": "Hora más habitual"
+  ,"evolutionInsightBestFocus": "Mejor hora de enfoque"
+  ,"evolutionInsightBalance": "Entrenamiento y recuperación"
+  ,"evolutionInsightWeekdayValue": "Día de la semana {weekday}"
+  ,"@evolutionInsightWeekdayValue": {"placeholders": {"weekday": {"type": "String"}}}
+  ,"evolutionInsightMinuteValue": "Cerca del minuto {minute} del día"
+  ,"@evolutionInsightMinuteValue": {"placeholders": {"minute": {"type": "String"}}}
+  ,"evolutionInsightHourValue": "Cerca de las {hour}:00"
+  ,"@evolutionInsightHourValue": {"placeholders": {"hour": {"type": "String"}}}
+  ,"evolutionInsightBalanceValue": "{workout} entrenamiento · {recovery} recuperación"
+  ,"@evolutionInsightBalanceValue": {"placeholders": {"workout": {"type": "int"}, "recovery": {"type": "int"}}}
+  ,"evolutionAnnualTitle": "Retrospectiva {year}"
+  ,"@evolutionAnnualTitle": {"placeholders": {"year": {"type": "int"}}}
+  ,"evolutionAnnualLocked": "Retrospectiva anual bloqueada hasta fin de año"
+  ,"evolutionAnnualLockedTitle": "Tu historia todavía está ocurriendo"
+  ,"evolutionAnnualLockedMessage": "Al comenzar {yearPlusOne}, podrás recorrer tus hitos de este año."
+  ,"@evolutionAnnualLockedMessage": {"placeholders": {"yearPlusOne": {"type": "int"}}}
+  ,"evolutionAnnualEmptyTitle": "Un año por comenzar"
+  ,"evolutionAnnualEmptyMessage": "Tu línea de tiempo aparecerá aquí cuando tengas registros."
+  ,"evolutionEventDate": "El {date}"
+  ,"@evolutionEventDate": {"placeholders": {"date": {"type": "String"}}}
+  ,"evolutionEventHabit": "Hábito completado"
+  ,"evolutionEventTask": "Tarea completada"
+  ,"evolutionEventFocus": "{minutes} minutos de enfoque"
+  ,"@evolutionEventFocus": {"placeholders": {"minutes": {"type": "int"}}}
+  ,"evolutionEventMilestone": "Hito personal"
 }

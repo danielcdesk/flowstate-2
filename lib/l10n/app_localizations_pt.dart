@@ -715,6 +715,134 @@ class AppLocalizationsPt extends AppLocalizations {
   String planPrioritySemantics(String priority) {
     return 'Prioridade $priority';
   }
+
+  @override
+  String get evolutionTitle => 'Sua evolução';
+
+  @override
+  String get evolutionSubtitle =>
+      'Veja o que seu histórico já está construindo, sem comparação e sem culpa.';
+
+  @override
+  String get evolutionLoading => 'Carregando sua evolução';
+
+  @override
+  String get evolutionLoadError =>
+      'Não foi possível carregar sua evolução. Seus dados continuam neste aparelho.';
+
+  @override
+  String evolutionLevelXp(int level, int xp) {
+    return 'Nível $level · $xp XP acumulados';
+  }
+
+  @override
+  String get evolutionRadarTitle => 'Radar de habilidades';
+
+  @override
+  String get evolutionRadarAccessible =>
+      'Radar de habilidades calculado pelo seu histórico';
+
+  @override
+  String get evolutionSkillHabits => 'Hábitos';
+
+  @override
+  String get evolutionSkillPlanning => 'Planejamento';
+
+  @override
+  String get evolutionSkillFocus => 'Foco';
+
+  @override
+  String get evolutionWeeklyTitle => 'Revisão das últimas duas semanas';
+
+  @override
+  String get evolutionWeeklyEmptyTitle => 'Sua revisão ainda está se formando';
+
+  @override
+  String get evolutionWeeklyEmptyMessage =>
+      'Depois de 14 dias completos, aparecem padrões úteis do seu ritmo.';
+
+  @override
+  String get evolutionWeeklyNoInsights =>
+      'Ainda não há um padrão forte para destacar.';
+
+  @override
+  String get evolutionInsightStrongestDay => 'Dia mais consistente';
+
+  @override
+  String get evolutionInsightMostMissedHabit => 'Hábito que mais pede atenção';
+
+  @override
+  String get evolutionInsightTypicalTime => 'Horário mais comum';
+
+  @override
+  String get evolutionInsightBestFocus => 'Melhor horário de foco';
+
+  @override
+  String get evolutionInsightBalance => 'Treino e recuperação';
+
+  @override
+  String evolutionInsightWeekdayValue(String weekday) {
+    return 'Dia da semana $weekday';
+  }
+
+  @override
+  String evolutionInsightMinuteValue(String minute) {
+    return 'Por volta do minuto $minute do dia';
+  }
+
+  @override
+  String evolutionInsightHourValue(String hour) {
+    return 'Por volta de ${hour}h';
+  }
+
+  @override
+  String evolutionInsightBalanceValue(int workout, int recovery) {
+    return '$workout treino · $recovery recuperação';
+  }
+
+  @override
+  String evolutionAnnualTitle(int year) {
+    return 'Retrospectiva $year';
+  }
+
+  @override
+  String get evolutionAnnualLocked =>
+      'Retrospectiva anual bloqueada até o fim do ano';
+
+  @override
+  String get evolutionAnnualLockedTitle =>
+      'Sua história ainda está acontecendo';
+
+  @override
+  String evolutionAnnualLockedMessage(int yearPlusOne) {
+    return 'No começo de $yearPlusOne, você poderá percorrer seus marcos deste ano.';
+  }
+
+  @override
+  String get evolutionAnnualEmptyTitle => 'Um ano para começar';
+
+  @override
+  String get evolutionAnnualEmptyMessage =>
+      'Quando houver registros, eles aparecerão aqui em uma linha do tempo.';
+
+  @override
+  String evolutionEventDate(String date) {
+    return 'Em $date';
+  }
+
+  @override
+  String get evolutionEventHabit => 'Hábito concluído';
+
+  @override
+  String get evolutionEventTask => 'Tarefa concluída';
+
+  @override
+  String evolutionEventFocus(int minutes) {
+    return 'Foco por $minutes minutos';
+  }
+
+  @override
+  String get evolutionEventMilestone => 'Marco pessoal';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -1427,4 +1555,132 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String planPrioritySemantics(String priority) {
     return 'Prioridade $priority';
   }
+
+  @override
+  String get evolutionTitle => 'Sua evolução';
+
+  @override
+  String get evolutionSubtitle =>
+      'Veja o que seu histórico já está construindo, sem comparação e sem culpa.';
+
+  @override
+  String get evolutionLoading => 'Carregando sua evolução';
+
+  @override
+  String get evolutionLoadError =>
+      'Não foi possível carregar sua evolução. Seus dados continuam neste aparelho.';
+
+  @override
+  String evolutionLevelXp(int level, int xp) {
+    return 'Nível $level · $xp XP acumulados';
+  }
+
+  @override
+  String get evolutionRadarTitle => 'Radar de habilidades';
+
+  @override
+  String get evolutionRadarAccessible =>
+      'Radar de habilidades calculado pelo seu histórico';
+
+  @override
+  String get evolutionSkillHabits => 'Hábitos';
+
+  @override
+  String get evolutionSkillPlanning => 'Planejamento';
+
+  @override
+  String get evolutionSkillFocus => 'Foco';
+
+  @override
+  String get evolutionWeeklyTitle => 'Revisão das últimas duas semanas';
+
+  @override
+  String get evolutionWeeklyEmptyTitle => 'Sua revisão ainda está se formando';
+
+  @override
+  String get evolutionWeeklyEmptyMessage =>
+      'Depois de 14 dias completos, aparecem padrões úteis do seu ritmo.';
+
+  @override
+  String get evolutionWeeklyNoInsights =>
+      'Ainda não há um padrão forte para destacar.';
+
+  @override
+  String get evolutionInsightStrongestDay => 'Dia mais consistente';
+
+  @override
+  String get evolutionInsightMostMissedHabit => 'Hábito que mais pede atenção';
+
+  @override
+  String get evolutionInsightTypicalTime => 'Horário mais comum';
+
+  @override
+  String get evolutionInsightBestFocus => 'Melhor horário de foco';
+
+  @override
+  String get evolutionInsightBalance => 'Treino e recuperação';
+
+  @override
+  String evolutionInsightWeekdayValue(String weekday) {
+    return 'Dia da semana $weekday';
+  }
+
+  @override
+  String evolutionInsightMinuteValue(String minute) {
+    return 'Por volta do minuto $minute do dia';
+  }
+
+  @override
+  String evolutionInsightHourValue(String hour) {
+    return 'Por volta de ${hour}h';
+  }
+
+  @override
+  String evolutionInsightBalanceValue(int workout, int recovery) {
+    return '$workout treino · $recovery recuperação';
+  }
+
+  @override
+  String evolutionAnnualTitle(int year) {
+    return 'Retrospectiva $year';
+  }
+
+  @override
+  String get evolutionAnnualLocked =>
+      'Retrospectiva anual bloqueada até o fim do ano';
+
+  @override
+  String get evolutionAnnualLockedTitle =>
+      'Sua história ainda está acontecendo';
+
+  @override
+  String evolutionAnnualLockedMessage(int yearPlusOne) {
+    return 'No começo de $yearPlusOne, você poderá percorrer seus marcos deste ano.';
+  }
+
+  @override
+  String get evolutionAnnualEmptyTitle => 'Um ano para começar';
+
+  @override
+  String get evolutionAnnualEmptyMessage =>
+      'Quando houver registros, eles aparecerão aqui em uma linha do tempo.';
+
+  @override
+  String evolutionEventDate(String date) {
+    return 'Em $date';
+  }
+
+  @override
+  String get evolutionEventHabit => 'Hábito concluído';
+
+  @override
+  String get evolutionEventTask => 'Tarefa concluída';
+
+  @override
+  String evolutionEventFocus(int minutes) {
+    return 'Foco por $minutes minutos';
+  }
+
+  @override
+  String get evolutionEventMilestone => 'Marco pessoal';
 }

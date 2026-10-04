@@ -12,6 +12,8 @@ import 'package:flowstate/features/plan/application/plan_controller.dart';
 import 'package:flowstate/features/plan/presentation/plan_page.dart';
 import 'package:flowstate/features/focus/application/focus_controller.dart';
 import 'package:flowstate/features/focus/presentation/focus_session_sheet.dart';
+import 'package:flowstate/features/evolution/application/evolution_controller.dart';
+import 'package:flowstate/features/evolution/presentation/evolution_page.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
@@ -21,6 +23,7 @@ class AdaptiveShell extends StatefulWidget {
     required this.habitsController,
     required this.planController,
     this.focusController,
+    this.evolutionController,
     super.key,
   });
 
@@ -28,6 +31,7 @@ class AdaptiveShell extends StatefulWidget {
   final HabitsController habitsController;
   final PlanController planController;
   final FocusController? focusController;
+  final EvolutionController? evolutionController;
 
   @override
   State<AdaptiveShell> createState() => _AdaptiveShellState();
@@ -54,6 +58,7 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
       Icons.fitness_center_outlined,
       Icons.insights_outlined,
     ];
+    final EvolutionController? evolutionController = widget.evolutionController;
     final List<Widget> pages = <Widget>[
       TodayPage(
         controller: widget.todayController,
@@ -69,7 +74,9 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
       ),
       HabitsPage(controller: widget.habitsController),
       _ShellPlaceholder(label: labels[3]),
-      _ShellPlaceholder(label: labels[4]),
+      evolutionController == null
+          ? _ShellPlaceholder(label: labels[4])
+          : EvolutionPage(controller: evolutionController),
     ];
     final List<NavigationDestination> bottomDestinations =
         <NavigationDestination>[

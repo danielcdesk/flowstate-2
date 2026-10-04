@@ -220,4 +220,47 @@
   ,"planTaskNoDate": "No date set"
   ,"planPrioritySemantics": "{priority} priority"
   ,"@planPrioritySemantics": {"placeholders": {"priority": {"type": "String"}}}
+  ,"evolutionTitle": "Your evolution"
+  ,"evolutionSubtitle": "See what your history is building, without comparison or guilt."
+  ,"evolutionLoading": "Loading your evolution"
+  ,"evolutionLoadError": "Your evolution could not be loaded. Your data is still on this device."
+  ,"evolutionLevelXp": "Level {level} · {xp} XP accumulated"
+  ,"@evolutionLevelXp": {"placeholders": {"level": {"type": "int"}, "xp": {"type": "int"}}}
+  ,"evolutionRadarTitle": "Skill radar"
+  ,"evolutionRadarAccessible": "Skill radar calculated from your history"
+  ,"evolutionSkillHabits": "Habits"
+  ,"evolutionSkillPlanning": "Planning"
+  ,"evolutionSkillFocus": "Focus"
+  ,"evolutionWeeklyTitle": "Review of the last two weeks"
+  ,"evolutionWeeklyEmptyTitle": "Your review is still forming"
+  ,"evolutionWeeklyEmptyMessage": "Useful patterns appear after 14 complete days."
+  ,"evolutionWeeklyNoInsights": "There is not a strong pattern to highlight yet."
+  ,"evolutionInsightStrongestDay": "Most consistent day"
+  ,"evolutionInsightMostMissedHabit": "Habit that needs attention"
+  ,"evolutionInsightTypicalTime": "Most common time"
+  ,"evolutionInsightBestFocus": "Best focus time"
+  ,"evolutionInsightBalance": "Workout and recovery"
+  ,"evolutionInsightWeekdayValue": "Weekday {weekday}"
+  ,"@evolutionInsightWeekdayValue": {"placeholders": {"weekday": {"type": "String"}}}
+  ,"evolutionInsightMinuteValue": "Around minute {minute} of the day"
+  ,"@evolutionInsightMinuteValue": {"placeholders": {"minute": {"type": "String"}}}
+  ,"evolutionInsightHourValue": "Around {hour}:00"
+  ,"@evolutionInsightHourValue": {"placeholders": {"hour": {"type": "String"}}}
+  ,"evolutionInsightBalanceValue": "{workout} workout · {recovery} recovery"
+  ,"@evolutionInsightBalanceValue": {"placeholders": {"workout": {"type": "int"}, "recovery": {"type": "int"}}}
+  ,"evolutionAnnualTitle": "{year} retrospective"
+  ,"@evolutionAnnualTitle": {"placeholders": {"year": {"type": "int"}}}
+  ,"evolutionAnnualLocked": "Annual retrospective locked until year end"
+  ,"evolutionAnnualLockedTitle": "Your story is still unfolding"
+  ,"evolutionAnnualLockedMessage": "At the start of {yearPlusOne}, you can revisit this year's milestones."
+  ,"@evolutionAnnualLockedMessage": {"placeholders": {"yearPlusOne": {"type": "int"}}}
+  ,"evolutionAnnualEmptyTitle": "A year ready to begin"
+  ,"evolutionAnnualEmptyMessage": "Your timeline will appear here when you have records."
+  ,"evolutionEventDate": "On {date}"
+  ,"@evolutionEventDate": {"placeholders": {"date": {"type": "String"}}}
+  ,"evolutionEventHabit": "Habit completed"
+  ,"evolutionEventTask": "Task completed"
+  ,"evolutionEventFocus": "{minutes} minutes of focus"
+  ,"@evolutionEventFocus": {"placeholders": {"minutes": {"type": "int"}}}
+  ,"evolutionEventMilestone": "Personal milestone"
 }

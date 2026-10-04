@@ -914,4 +914,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get workoutsFinish => 'Complete workout';
+
+  @override
+  String get onboardingSettings => 'Configure modules';
+
+  @override
+  String get onboardingTitle => 'Shape your Flow';
+
+  @override
+  String get onboardingSubtitle =>
+      'Choose what makes sense now. You can change it later without deleting data.';
+
+  @override
+  String get onboardingLoading => 'Loading your preferences';
+
+  @override
+  String get onboardingTemplatesTitle => 'Start with a template';
+
+  @override
+  String get onboardingTemplateMorning => 'Productive morning';
+
+  @override
+  String get onboardingTemplateMorningDescription =>
+      'Habits, planning, and focus for a calmer start.';
+
+  @override
+  String get onboardingTemplateStrength => 'Beginner strength 3x a week';
+
+  @override
+  String get onboardingTemplateStrengthDescription =>
+      'Habits, planning, and light workouts to build rhythm.';
+
+  @override
+  String get onboardingModulesTitle => 'Active modules';
+
+  @override
+  String get onboardingModuleHabits => 'Habits';
+
+  @override
+  String get onboardingModuleHabitsDescription =>
+      'Gentle repetition and minimum versions.';
+
+  @override
+  String get onboardingModulePlanning => 'Planning';
+
+  @override
+  String get onboardingModulePlanningDescription => 'Tasks and weekly routine.';
+
+  @override
+  String get onboardingModuleFocus => 'Focus';
+
+  @override
+  String get onboardingModuleFocusDescription =>
+      'Sessions with a saved deadline.';
+
+  @override
+  String get onboardingModuleWorkouts => 'Workouts';
+
+  @override
+  String get onboardingModuleWorkoutsDescription => 'Sets, loads, and rest.';
+
+  @override
+  String get onboardingSave => 'Save preferences';
+
+  @override
+  String get onboardingSaveError =>
+      'This could not be saved. Your data is still on this device.';
 }

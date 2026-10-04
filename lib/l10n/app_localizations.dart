@@ -1624,6 +1624,126 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Concluir treino'**
   String get workoutsFinish;
+
+  /// No description provided for @onboardingSettings.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Configurar módulos'**
+  String get onboardingSettings;
+
+  /// No description provided for @onboardingTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Monte seu Flow'**
+  String get onboardingTitle;
+
+  /// No description provided for @onboardingSubtitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Escolha o que faz sentido agora. Você pode mudar depois sem apagar seus dados.'**
+  String get onboardingSubtitle;
+
+  /// No description provided for @onboardingLoading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Carregando suas preferências'**
+  String get onboardingLoading;
+
+  /// No description provided for @onboardingTemplatesTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Comece com um modelo'**
+  String get onboardingTemplatesTitle;
+
+  /// No description provided for @onboardingTemplateMorning.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Manhã produtiva'**
+  String get onboardingTemplateMorning;
+
+  /// No description provided for @onboardingTemplateMorningDescription.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábitos, plano e foco para organizar o começo do dia.'**
+  String get onboardingTemplateMorningDescription;
+
+  /// No description provided for @onboardingTemplateStrength.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Calistenia iniciante 3x por semana'**
+  String get onboardingTemplateStrength;
+
+  /// No description provided for @onboardingTemplateStrengthDescription.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábitos, plano e treinos leves para criar ritmo.'**
+  String get onboardingTemplateStrengthDescription;
+
+  /// No description provided for @onboardingModulesTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Módulos ativos'**
+  String get onboardingModulesTitle;
+
+  /// No description provided for @onboardingModuleHabits.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Hábitos'**
+  String get onboardingModuleHabits;
+
+  /// No description provided for @onboardingModuleHabitsDescription.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Repetições gentis e versões mínimas.'**
+  String get onboardingModuleHabitsDescription;
+
+  /// No description provided for @onboardingModulePlanning.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Plano'**
+  String get onboardingModulePlanning;
+
+  /// No description provided for @onboardingModulePlanningDescription.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tarefas e rotina semanal.'**
+  String get onboardingModulePlanningDescription;
+
+  /// No description provided for @onboardingModuleFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Foco'**
+  String get onboardingModuleFocus;
+
+  /// No description provided for @onboardingModuleFocusDescription.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sessões por prazo salvo.'**
+  String get onboardingModuleFocusDescription;
+
+  /// No description provided for @onboardingModuleWorkouts.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Treinos'**
+  String get onboardingModuleWorkouts;
+
+  /// No description provided for @onboardingModuleWorkoutsDescription.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Séries, cargas e descanso.'**
+  String get onboardingModuleWorkoutsDescription;
+
+  /// No description provided for @onboardingSave.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Salvar preferências'**
+  String get onboardingSave;
+
+  /// No description provided for @onboardingSaveError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível salvar. Seus dados continuam neste aparelho.'**
+  String get onboardingSaveError;
 }
 
 class _AppLocalizationsDelegate

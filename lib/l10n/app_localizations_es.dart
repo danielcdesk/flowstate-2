@@ -916,4 +916,71 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get workoutsFinish => 'Completar entrenamiento';
+
+  @override
+  String get onboardingSettings => 'Configurar módulos';
+
+  @override
+  String get onboardingTitle => 'Crea tu Flow';
+
+  @override
+  String get onboardingSubtitle =>
+      'Elige lo que tiene sentido ahora. Puedes cambiarlo sin borrar tus datos.';
+
+  @override
+  String get onboardingLoading => 'Cargando tus preferencias';
+
+  @override
+  String get onboardingTemplatesTitle => 'Empieza con una plantilla';
+
+  @override
+  String get onboardingTemplateMorning => 'Mañana productiva';
+
+  @override
+  String get onboardingTemplateMorningDescription =>
+      'Hábitos, planificación y enfoque para empezar con calma.';
+
+  @override
+  String get onboardingTemplateStrength => 'Fuerza inicial 3 veces por semana';
+
+  @override
+  String get onboardingTemplateStrengthDescription =>
+      'Hábitos, planificación y entrenamientos ligeros para crear ritmo.';
+
+  @override
+  String get onboardingModulesTitle => 'Módulos activos';
+
+  @override
+  String get onboardingModuleHabits => 'Hábitos';
+
+  @override
+  String get onboardingModuleHabitsDescription =>
+      'Repetición amable y versiones mínimas.';
+
+  @override
+  String get onboardingModulePlanning => 'Planificación';
+
+  @override
+  String get onboardingModulePlanningDescription => 'Tareas y rutina semanal.';
+
+  @override
+  String get onboardingModuleFocus => 'Enfoque';
+
+  @override
+  String get onboardingModuleFocusDescription =>
+      'Sesiones con un plazo guardado.';
+
+  @override
+  String get onboardingModuleWorkouts => 'Entrenamientos';
+
+  @override
+  String get onboardingModuleWorkoutsDescription =>
+      'Series, cargas y descanso.';
+
+  @override
+  String get onboardingSave => 'Guardar preferencias';
+
+  @override
+  String get onboardingSaveError =>
+      'No se pudo guardar. Tus datos siguen en este dispositivo.';
 }

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:clock/clock.dart';
 import 'package:drift/drift.dart';
 import 'package:flowstate/core/local_date.dart';
 import 'package:flowstate/data/database/app_database.dart' as db;
@@ -17,6 +18,7 @@ import 'package:flowstate/domain/shared/record_metadata.dart';
 import 'package:flowstate/domain/tasks/task.dart';
 import 'package:flowstate/domain/workouts/workout.dart';
 import 'package:flowstate/domain/repositories/workout_repository.dart';
+import 'package:flowstate/domain/repositories/preferences_repository.dart';
 
 final class DriftHabitRepository implements HabitRepository {
   const DriftHabitRepository(this.database);
@@ -280,6 +282,47 @@ final class DriftFocusRepository implements FocusRepository {
             startedAt: session.startedAt,
             endAt: session.endAt,
             taskId: Value<String?>(session.taskId),
+          ),
+        );
+  }
+}
+
+final class DriftPreferencesRepository implements PreferencesRepository {
+  const DriftPreferencesRepository({
+    required this.database,
+    required this.clock,
+    required this.deviceId,
+  });
+
+  final db.AppDatabase database;
+  final Clock clock;
+  final String deviceId;
+
+  @override
+  Future<String?> getValue(String key) async {
+    final db.AppPreference? row =
+        await (database.select(database.appPreferences)
+              ..where((db.AppPreferences item) => item.key.equals(key)))
+            .getSingleOrNull();
+    return row?.valueJson;
+  }
+
+  @override
+  Future<void> setValue({
+    required String key,
+    required String valueJson,
+  }) async {
+    final DateTime now = clock.now().toUtc();
+    await database
+        .into(database.appPreferences)
+        .insertOnConflictUpdate(
+          db.AppPreferencesCompanion.insert(
+            id: key,
+            createdAt: now,
+            updatedAt: now,
+            deviceId: deviceId,
+            key: key,
+            valueJson: valueJson,
           ),
         );
   }

@@ -15,6 +15,7 @@ import 'package:flowstate/features/plan/application/plan_controller.dart';
 import 'package:flowstate/features/focus/application/focus_controller.dart';
 import 'package:flowstate/features/evolution/application/evolution_controller.dart';
 import 'package:flowstate/features/workouts/application/workouts_controller.dart';
+import 'package:flowstate/features/onboarding/application/onboarding_controller.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
 class FlowStateApp extends StatefulWidget {
@@ -74,6 +75,13 @@ class _FlowStateAppState extends State<FlowStateApp> {
     deviceId: _deviceId,
     onDataChanged: _todayController.load,
   );
+  late final OnboardingController _onboardingController = OnboardingController(
+    repository: DriftPreferencesRepository(
+      database: _database,
+      clock: Clock(),
+      deviceId: _deviceId,
+    ),
+  );
 
   @override
   void initState() {
@@ -81,6 +89,7 @@ class _FlowStateAppState extends State<FlowStateApp> {
     unawaited(_focusController.load());
     unawaited(_evolutionController.load());
     unawaited(_workoutsController.load());
+    unawaited(_onboardingController.load());
   }
 
   @override
@@ -91,6 +100,7 @@ class _FlowStateAppState extends State<FlowStateApp> {
     _focusController.dispose();
     _evolutionController.dispose();
     _workoutsController.dispose();
+    _onboardingController.dispose();
     unawaited(_database.close());
     super.dispose();
   }
@@ -111,6 +121,7 @@ class _FlowStateAppState extends State<FlowStateApp> {
         focusController: _focusController,
         evolutionController: _evolutionController,
         workoutsController: _workoutsController,
+        onboardingController: _onboardingController,
       ),
     );
   }

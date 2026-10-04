@@ -1,0 +1,40 @@
+name: release-builds
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - fase-6-release
+
+jobs:
+  android-aab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build appbundle --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: flowstate-android-aab
+          path: build/app/outputs/bundle/release/*.aab
+
+  windows-release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build windows --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: flowstate-windows-release
+          path: build/windows/x64/runner/Release/**

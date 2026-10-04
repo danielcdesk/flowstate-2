@@ -263,4 +263,25 @@
   ,"evolutionEventFocus": "{minutes} minutos de enfoque"
   ,"@evolutionEventFocus": {"placeholders": {"minutes": {"type": "int"}}}
   ,"evolutionEventMilestone": "Hito personal"
+  ,"workoutsTitle": "Entrenamientos"
+  ,"workoutsSubtitle": "Registra series, cargas y descansos a tu ritmo."
+  ,"workoutsLoading": "Cargando tus entrenamientos"
+  ,"workoutsLoadError": "No se pudieron cargar tus entrenamientos. Tus datos siguen en este dispositivo."
+  ,"workoutsEmptyTitle": "Empieza con un entrenamiento simple"
+  ,"workoutsEmptyMessage": "Un plan inicial te ayuda a empezar sin decidirlo todo ahora."
+  ,"workoutsCreateStarter": "Crear entrenamiento inicial"
+  ,"workoutsStarterTitle": "Fuerza esencial"
+  ,"workoutsStart": "Iniciar entrenamiento"
+  ,"workoutsExerciseCount": "{count, plural, one{1 ejercicio} other{{count} ejercicios}}"
+  ,"@workoutsExerciseCount": {"placeholders": {"count": {"type": "int"}}}
+  ,"workoutsInProgress": "Entrenamiento en curso"
+  ,"workoutsElapsed": "Comenzó a las {time}"
+  ,"@workoutsElapsed": {"placeholders": {"time": {"type": "String"}}}
+  ,"workoutsSetCount": "{count, plural, =0 {Ninguna serie registrada} =1 {1 serie registrada} other{{count} series registradas}}"
+  ,"@workoutsSetCount": {"placeholders": {"count": {"type": "int"}}}
+  ,"workoutsRestRemaining": "Descanso restante: {seconds} segundos"
+  ,"@workoutsRestRemaining": {"placeholders": {"seconds": {"type": "int"}}}
+  ,"workoutsRecordSet": "Registrar serie de {exercise}"
+  ,"@workoutsRecordSet": {"placeholders": {"exercise": {"type": "String"}}}
+  ,"workoutsFinish": "Completar entrenamiento"
 }

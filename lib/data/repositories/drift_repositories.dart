@@ -15,6 +15,8 @@ import 'package:flowstate/domain/repositories/xp_repository.dart';
 import 'package:flowstate/domain/routine/routine_block.dart';
 import 'package:flowstate/domain/shared/record_metadata.dart';
 import 'package:flowstate/domain/tasks/task.dart';
+import 'package:flowstate/domain/workouts/workout.dart';
+import 'package:flowstate/domain/repositories/workout_repository.dart';
 
 final class DriftHabitRepository implements HabitRepository {
   const DriftHabitRepository(this.database);
@@ -282,6 +284,160 @@ final class DriftFocusRepository implements FocusRepository {
         );
   }
 }
+
+final class DriftWorkoutRepository implements WorkoutRepository {
+  const DriftWorkoutRepository(this.database);
+
+  final db.AppDatabase database;
+
+  @override
+  Future<List<WorkoutPlan>> getPlans() async {
+    final List<WorkoutPlan> records =
+        await (database.select(database.workoutPlans)
+              ..where((db.WorkoutPlans row) => row.deletedAt.isNull())
+              ..orderBy(<OrderingTerm Function(db.WorkoutPlans)>[
+                (db.WorkoutPlans row) => OrderingTerm.asc(row.createdAt),
+                (db.WorkoutPlans row) => OrderingTerm.asc(row.id),
+              ]))
+            .map(_workoutPlanFromRow)
+            .get();
+    return List<WorkoutPlan>.unmodifiable(records);
+  }
+
+  @override
+  Future<void> savePlan(WorkoutPlan plan) async {
+    await database
+        .into(database.workoutPlans)
+        .insertOnConflictUpdate(
+          db.WorkoutPlansCompanion.insert(
+            id: plan.id,
+            createdAt: plan.metadata.createdAt,
+            updatedAt: plan.metadata.updatedAt,
+            deletedAt: Value<DateTime?>(plan.metadata.deletedAt),
+            deviceId: plan.metadata.deviceId,
+            title: plan.title,
+            exercisesJson: jsonEncode(plan.exerciseIds),
+          ),
+        );
+  }
+
+  @override
+  Future<List<WorkoutSession>> getSessions() async {
+    final List<WorkoutSession> records =
+        await (database.select(database.workoutSessions)
+              ..where((db.WorkoutSessions row) => row.deletedAt.isNull())
+              ..orderBy(<OrderingTerm Function(db.WorkoutSessions)>[
+                (db.WorkoutSessions row) => OrderingTerm.desc(row.startedAt),
+                (db.WorkoutSessions row) => OrderingTerm.asc(row.id),
+              ]))
+            .map(_workoutSessionFromRow)
+            .get();
+    return List<WorkoutSession>.unmodifiable(records);
+  }
+
+  @override
+  Future<void> saveSession(WorkoutSession session) async {
+    await database
+        .into(database.workoutSessions)
+        .insertOnConflictUpdate(
+          db.WorkoutSessionsCompanion.insert(
+            id: session.id,
+            createdAt: session.metadata.createdAt,
+            updatedAt: session.metadata.updatedAt,
+            deletedAt: Value<DateTime?>(session.metadata.deletedAt),
+            deviceId: session.metadata.deviceId,
+            planId: session.planId,
+            startedAt: session.startedAt,
+            endedAt: Value<DateTime?>(session.endedAt),
+          ),
+        );
+  }
+
+  @override
+  Future<List<WorkoutSet>> getSets({required String sessionId}) async {
+    final List<WorkoutSet> records =
+        await (database.select(database.workoutSets)
+              ..where(
+                (db.WorkoutSets row) =>
+                    row.deletedAt.isNull() & row.sessionId.equals(sessionId),
+              )
+              ..orderBy(<OrderingTerm Function(db.WorkoutSets)>[
+                (db.WorkoutSets row) => OrderingTerm.asc(row.setIndex),
+              ]))
+            .map(_workoutSetFromRow)
+            .get();
+    return List<WorkoutSet>.unmodifiable(records);
+  }
+
+  @override
+  Future<void> saveSet(WorkoutSet set) async {
+    await database
+        .into(database.workoutSets)
+        .insertOnConflictUpdate(
+          db.WorkoutSetsCompanion.insert(
+            id: set.metadata.id,
+            createdAt: set.metadata.createdAt,
+            updatedAt: set.metadata.updatedAt,
+            deletedAt: Value<DateTime?>(set.metadata.deletedAt),
+            deviceId: set.metadata.deviceId,
+            sessionId: set.sessionId,
+            exerciseId: set.exerciseId,
+            setIndex: set.setIndex,
+            repetitions: set.repetitions,
+            loadKg: set.loadKg,
+            restSeconds: set.restSeconds,
+          ),
+        );
+  }
+}
+
+WorkoutPlan _workoutPlanFromRow(db.WorkoutPlan row) {
+  final Object? decoded = jsonDecode(row.exercisesJson);
+  if (decoded is! List<Object?> ||
+      decoded.any((Object? item) => item is! String)) {
+    throw const FormatException('Stored workout exercises are invalid.');
+  }
+  return WorkoutPlan(
+    metadata: _metadata(
+      id: row.id,
+      createdAt: row.createdAt,
+      updatedAt: row.updatedAt,
+      deletedAt: row.deletedAt,
+      deviceId: row.deviceId,
+    ),
+    title: row.title,
+    exerciseIds: decoded.cast<String>(),
+  );
+}
+
+WorkoutSession _workoutSessionFromRow(db.WorkoutSession row) => WorkoutSession(
+  metadata: _metadata(
+    id: row.id,
+    createdAt: row.createdAt,
+    updatedAt: row.updatedAt,
+    deletedAt: row.deletedAt,
+    deviceId: row.deviceId,
+  ),
+  planId: row.planId,
+  startedAt: row.startedAt.toUtc(),
+  endedAt: row.endedAt?.toUtc(),
+);
+
+WorkoutSet _workoutSetFromRow(db.WorkoutSet row) => WorkoutSet(
+  metadata: _metadata(
+    id: row.id,
+    createdAt: row.createdAt,
+    updatedAt: row.updatedAt,
+    deletedAt: row.deletedAt,
+    deviceId: row.deviceId,
+  ),
+  sessionId: row.sessionId,
+  exerciseId: row.exerciseId,
+  setIndex: row.setIndex,
+  repetitions: row.repetitions,
+  loadKg: row.loadKg,
+  restSeconds: row.restSeconds,
+);
 
 final class DriftXpRepository implements XpRepository {
   const DriftXpRepository(this.database);

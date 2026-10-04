@@ -28,7 +28,7 @@ void main() {
         previousDriftWarningSetting;
   });
 
-  test('schema v1 creates all tables and passes quick_check', () async {
+  test('schema v2 creates all tables and passes quick_check', () async {
     final db.AppDatabase database = db.AppDatabase(NativeDatabase.memory());
     addTearDown(database.close);
 
@@ -51,7 +51,7 @@ void main() {
     );
   });
 
-  test('empty version zero database upgrades to schema v1', () async {
+  test('empty version zero database upgrades to schema v2', () async {
     final Directory root = await Directory.systemTemp.createTemp('flow-v0-');
     addTearDown(() => root.delete(recursive: true));
     final File path = File('${root.path}/version-zero.sqlite');
@@ -68,12 +68,12 @@ void main() {
     final QueryRow version = await database
         .customSelect('PRAGMA user_version')
         .getSingle();
-    expect(version.data.values.single, 1);
+    expect(version.data.values.single, 2);
     final List<db.Habit> habits = await database.select(database.habits).get();
     expect(habits, isEmpty);
   });
 
-  test('schema v1 fixture opens without losing existing records', () async {
+  test('schema v1 fixture upgrades without losing existing records', () async {
     final Directory root = await Directory.systemTemp.createTemp('flow-v1-');
     addTearDown(() => root.delete(recursive: true));
     final File fixture = File('test/fixtures/schema_v1.sql');
@@ -153,7 +153,7 @@ void main() {
       temporaryDirectory: Directory('${root.path}/prepared'),
     );
     addTearDown(() => File(prepared.snapshotPath).delete());
-    expect(prepared.preview.metadata.schemaVersion, 1);
+    expect(prepared.preview.metadata.schemaVersion, 2);
     expect(prepared.preview.counts['habits'], 1);
 
     final File tampered = File('${root.path}/tampered.flowbackup');

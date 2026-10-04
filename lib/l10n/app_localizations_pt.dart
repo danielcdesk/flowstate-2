@@ -843,6 +843,80 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get evolutionEventMilestone => 'Marco pessoal';
+
+  @override
+  String get workoutsTitle => 'Treinos';
+
+  @override
+  String get workoutsSubtitle =>
+      'Registre séries, cargas e descansos no seu ritmo.';
+
+  @override
+  String get workoutsLoading => 'Carregando seus treinos';
+
+  @override
+  String get workoutsLoadError =>
+      'Não foi possível carregar seus treinos. Seus dados continuam neste aparelho.';
+
+  @override
+  String get workoutsEmptyTitle => 'Comece com um treino simples';
+
+  @override
+  String get workoutsEmptyMessage =>
+      'Um plano inicial ajuda você a começar sem decidir tudo agora.';
+
+  @override
+  String get workoutsCreateStarter => 'Criar treino inicial';
+
+  @override
+  String get workoutsStarterTitle => 'Força essencial';
+
+  @override
+  String get workoutsStart => 'Iniciar treino';
+
+  @override
+  String workoutsExerciseCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count exercícios',
+      one: '1 exercício',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get workoutsInProgress => 'Treino em andamento';
+
+  @override
+  String workoutsElapsed(String time) {
+    return 'Começou às $time';
+  }
+
+  @override
+  String workoutsSetCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count séries registradas',
+      one: '1 série registrada',
+      zero: 'Nenhuma série registrada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String workoutsRestRemaining(int seconds) {
+    return 'Descanso restante: $seconds segundos';
+  }
+
+  @override
+  String workoutsRecordSet(String exercise) {
+    return 'Registrar série de $exercise';
+  }
+
+  @override
+  String get workoutsFinish => 'Concluir treino';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -1683,4 +1757,78 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get evolutionEventMilestone => 'Marco pessoal';
+
+  @override
+  String get workoutsTitle => 'Treinos';
+
+  @override
+  String get workoutsSubtitle =>
+      'Registre séries, cargas e descansos no seu ritmo.';
+
+  @override
+  String get workoutsLoading => 'Carregando seus treinos';
+
+  @override
+  String get workoutsLoadError =>
+      'Não foi possível carregar seus treinos. Seus dados continuam neste aparelho.';
+
+  @override
+  String get workoutsEmptyTitle => 'Comece com um treino simples';
+
+  @override
+  String get workoutsEmptyMessage =>
+      'Um plano inicial ajuda você a começar sem decidir tudo agora.';
+
+  @override
+  String get workoutsCreateStarter => 'Criar treino inicial';
+
+  @override
+  String get workoutsStarterTitle => 'Força essencial';
+
+  @override
+  String get workoutsStart => 'Iniciar treino';
+
+  @override
+  String workoutsExerciseCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count exercícios',
+      one: '1 exercício',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get workoutsInProgress => 'Treino em andamento';
+
+  @override
+  String workoutsElapsed(String time) {
+    return 'Começou às $time';
+  }
+
+  @override
+  String workoutsSetCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count séries registradas',
+      one: '1 série registrada',
+      zero: 'Nenhuma série registrada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String workoutsRestRemaining(int seconds) {
+    return 'Descanso restante: $seconds segundos';
+  }
+
+  @override
+  String workoutsRecordSet(String exercise) {
+    return 'Registrar série de $exercise';
+  }
+
+  @override
+  String get workoutsFinish => 'Concluir treino';
 }

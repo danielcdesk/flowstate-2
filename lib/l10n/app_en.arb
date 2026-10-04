@@ -263,4 +263,25 @@
   ,"evolutionEventFocus": "{minutes} minutes of focus"
   ,"@evolutionEventFocus": {"placeholders": {"minutes": {"type": "int"}}}
   ,"evolutionEventMilestone": "Personal milestone"
+  ,"workoutsTitle": "Workouts"
+  ,"workoutsSubtitle": "Record sets, loads, and rest at your pace."
+  ,"workoutsLoading": "Loading your workouts"
+  ,"workoutsLoadError": "Your workouts could not be loaded. Your data is still on this device."
+  ,"workoutsEmptyTitle": "Start with a simple workout"
+  ,"workoutsEmptyMessage": "A starter plan helps you begin without deciding everything now."
+  ,"workoutsCreateStarter": "Create starter workout"
+  ,"workoutsStarterTitle": "Essential strength"
+  ,"workoutsStart": "Start workout"
+  ,"workoutsExerciseCount": "{count, plural, one{1 exercise} other{{count} exercises}}"
+  ,"@workoutsExerciseCount": {"placeholders": {"count": {"type": "int"}}}
+  ,"workoutsInProgress": "Workout in progress"
+  ,"workoutsElapsed": "Started at {time}"
+  ,"@workoutsElapsed": {"placeholders": {"time": {"type": "String"}}}
+  ,"workoutsSetCount": "{count, plural, =0 {No sets recorded} =1 {1 set recorded} other{{count} sets recorded}}"
+  ,"@workoutsSetCount": {"placeholders": {"count": {"type": "int"}}}
+  ,"workoutsRestRemaining": "Rest remaining: {seconds} seconds"
+  ,"@workoutsRestRemaining": {"placeholders": {"seconds": {"type": "int"}}}
+  ,"workoutsRecordSet": "Record {exercise} set"
+  ,"@workoutsRecordSet": {"placeholders": {"exercise": {"type": "String"}}}
+  ,"workoutsFinish": "Complete workout"
 }

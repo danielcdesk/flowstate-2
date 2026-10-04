@@ -1528,6 +1528,102 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Marco pessoal'**
   String get evolutionEventMilestone;
+
+  /// No description provided for @workoutsTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Treinos'**
+  String get workoutsTitle;
+
+  /// No description provided for @workoutsSubtitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Registre séries, cargas e descansos no seu ritmo.'**
+  String get workoutsSubtitle;
+
+  /// No description provided for @workoutsLoading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Carregando seus treinos'**
+  String get workoutsLoading;
+
+  /// No description provided for @workoutsLoadError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar seus treinos. Seus dados continuam neste aparelho.'**
+  String get workoutsLoadError;
+
+  /// No description provided for @workoutsEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Comece com um treino simples'**
+  String get workoutsEmptyTitle;
+
+  /// No description provided for @workoutsEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Um plano inicial ajuda você a começar sem decidir tudo agora.'**
+  String get workoutsEmptyMessage;
+
+  /// No description provided for @workoutsCreateStarter.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Criar treino inicial'**
+  String get workoutsCreateStarter;
+
+  /// No description provided for @workoutsStarterTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Força essencial'**
+  String get workoutsStarterTitle;
+
+  /// No description provided for @workoutsStart.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Iniciar treino'**
+  String get workoutsStart;
+
+  /// No description provided for @workoutsExerciseCount.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{count, plural, one{1 exercício} other{{count} exercícios}}'**
+  String workoutsExerciseCount(int count);
+
+  /// No description provided for @workoutsInProgress.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Treino em andamento'**
+  String get workoutsInProgress;
+
+  /// No description provided for @workoutsElapsed.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Começou às {time}'**
+  String workoutsElapsed(String time);
+
+  /// No description provided for @workoutsSetCount.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{count, plural, =0 {Nenhuma série registrada} =1 {1 série registrada} other{{count} séries registradas}}'**
+  String workoutsSetCount(int count);
+
+  /// No description provided for @workoutsRestRemaining.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Descanso restante: {seconds} segundos'**
+  String workoutsRestRemaining(int seconds);
+
+  /// No description provided for @workoutsRecordSet.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Registrar série de {exercise}'**
+  String workoutsRecordSet(String exercise);
+
+  /// No description provided for @workoutsFinish.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Concluir treino'**
+  String get workoutsFinish;
 }
 
 class _AppLocalizationsDelegate

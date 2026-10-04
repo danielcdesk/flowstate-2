@@ -1,5 +1,5 @@
 # Estado do projeto
-Fase atual: 4e Evolução em andamento; autorizada em 2026-10-04
+Fase atual: 5 Treinos e notificações em andamento; autorizada em 2026-10-04
 Fase 2: domínio puro para datas, recorrência, hábitos, tarefas, time-blocking, foco por prazo UTC, planos por energia, ação seguinte, XP/nível, conquistas, radar e insights semanais; 66 testes de core/domínio passaram localmente com 92,9% de cobertura do domínio. CI do GitHub passou em Windows e Ubuntu. O script local para na resolução de dependências porque o Dart instalado é 3.13.3 e o projeto requer 3.13.4.
 Feito: projeto Flutter Android/Windows; documentos-base; análise estrita; l10n ARB pt-BR/en/es; shell adaptativo inicial; telas Hoje e Boas-vindas; componentes de fluxo, hero, ações, lista e radar; testes de widgets; tooling/check.ps1; CI; biblioteca de referências em docs/refs; página própria do projeto em docs/index.html preparada para GitHub Pages; workflow de publicação; Retrospectiva anual interativa registrada para a Fase 4e.
 Pendente: revisar opção do anel e fontes OFL; o SDK local (Dart 3.13.3) não atende ao mínimo ^3.13.4, então a verificação Flutter foi concluída pela CI do GitHub.
@@ -20,3 +20,5 @@ Fase 4c — Plano e Rotina concluída: tela adaptativa semanal com navegação p
 Fase 4d — Foco concluída: sessões locais por prazo absoluto, recuperáveis após reinício, com vínculo opcional a tarefa; iniciar/interromper pelo Hoje e pelo Plano; ao concluir, XP idempotente pelo ledger com limites do domínio. Timer deriva do prazo persistido e continua com a tela fechada. Cinco goldens gerados no CI. Check local `tooling/check.ps1`: format sem alterações, análise limpa, 119 testes aprovados (20 goldens pulados no Windows), domínio 93,9% (739/787) e arquitetura aprovada; `pubspec.yaml` mantém ^3.13.4, apesar do SDK local ser 3.13.3 (ajuste foi temporário e revertido). Branch `fase-4d-foco`; tag `fase-4d` será publicada no fechamento deste registro.
 
 Fase 4e — Evolução em andamento, autorizada em 2026-10-04: conectar o radar a pontuações calculadas do histórico local, exibir revisão semanal determinística e retrospectiva anual interativa com linha do tempo; sem vídeo e sem pontos manuais.
+
+Fase 5 — Treinos em andamento: domínio de exercícios, planos, sessões, séries, Epley, sugestão editável de carga e descanso por prazo absoluto; armazenamento local em schema v2 com migração v1→v2, backup/restore e XP idempotente ao concluir. Tela de Treinos conectada com plano inicial e registro de séries. Notificações locais ainda serão conectadas antes do fechamento da fase.

@@ -90,6 +90,40 @@ class FocusSessions extends Table with AuditedTable {
   TextColumn get taskId => text().nullable().references(Tasks, #id)();
 }
 
+class WorkoutPlans extends Table with AuditedTable {
+  @override
+  Set<Column<Object>> get primaryKey => <Column<Object>>{id};
+
+  TextColumn get title => text()();
+  TextColumn get exercisesJson => text()();
+}
+
+class WorkoutSessions extends Table with AuditedTable {
+  @override
+  Set<Column<Object>> get primaryKey => <Column<Object>>{id};
+
+  TextColumn get planId => text().references(WorkoutPlans, #id)();
+  DateTimeColumn get startedAt => dateTime()();
+  DateTimeColumn get endedAt => dateTime().nullable()();
+}
+
+class WorkoutSets extends Table with AuditedTable {
+  @override
+  Set<Column<Object>> get primaryKey => <Column<Object>>{id};
+
+  TextColumn get sessionId => text().references(WorkoutSessions, #id)();
+  TextColumn get exerciseId => text()();
+  IntColumn get setIndex => integer()();
+  IntColumn get repetitions => integer()();
+  RealColumn get loadKg => real()();
+  IntColumn get restSeconds => integer()();
+
+  @override
+  List<Set<Column<Object>>> get uniqueKeys => <Set<Column<Object>>>[
+    <Column<Object>>{sessionId, exerciseId, setIndex},
+  ];
+}
+
 class XpEvents extends Table with AuditedTable {
   @override
   Set<Column<Object>> get primaryKey => <Column<Object>>{id};
@@ -122,6 +156,9 @@ class AppPreferences extends Table with AuditedTable {
     TaskCompletions,
     RoutineBlocks,
     FocusSessions,
+    WorkoutPlans,
+    WorkoutSessions,
+    WorkoutSets,
     XpEvents,
     AppPreferences,
   ],
@@ -143,13 +180,18 @@ final class AppDatabase extends _$AppDatabase {
       );
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (Migrator migrator) async => migrator.createAll(),
     onUpgrade: (Migrator migrator, int from, int to) async {
       if (from < 1 && to >= 1) await migrator.createAll();
+      if (from < 2 && to >= 2) {
+        await migrator.createTable(workoutPlans);
+        await migrator.createTable(workoutSessions);
+        await migrator.createTable(workoutSets);
+      }
     },
     beforeOpen: (OpeningDetails details) async {
       await customStatement('PRAGMA foreign_keys = ON');
@@ -180,22 +222,28 @@ final class AppDatabase extends _$AppDatabase {
         // Delete dependent rows before their referenced records.
         await customStatement('DELETE FROM task_completions');
         await customStatement('DELETE FROM focus_sessions');
+        await customStatement('DELETE FROM workout_sets');
+        await customStatement('DELETE FROM workout_sessions');
         await customStatement('DELETE FROM habit_logs');
         await customStatement('DELETE FROM xp_events');
         await customStatement('DELETE FROM routine_blocks');
         await customStatement('DELETE FROM app_preferences');
         await customStatement('DELETE FROM habits');
         await customStatement('DELETE FROM tasks');
+        await customStatement('DELETE FROM workout_plans');
         await afterClear?.call();
         // Insert referenced rows before dependent rows.
         for (final String table in const <String>[
           'habits',
           'tasks',
+          'workout_plans',
           'routine_blocks',
           'app_preferences',
           'habit_logs',
           'task_completions',
           'focus_sessions',
+          'workout_sessions',
+          'workout_sets',
           'xp_events',
         ]) {
           await customStatement(

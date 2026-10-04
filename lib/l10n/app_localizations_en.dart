@@ -841,4 +841,77 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get evolutionEventMilestone => 'Personal milestone';
+
+  @override
+  String get workoutsTitle => 'Workouts';
+
+  @override
+  String get workoutsSubtitle => 'Record sets, loads, and rest at your pace.';
+
+  @override
+  String get workoutsLoading => 'Loading your workouts';
+
+  @override
+  String get workoutsLoadError =>
+      'Your workouts could not be loaded. Your data is still on this device.';
+
+  @override
+  String get workoutsEmptyTitle => 'Start with a simple workout';
+
+  @override
+  String get workoutsEmptyMessage =>
+      'A starter plan helps you begin without deciding everything now.';
+
+  @override
+  String get workoutsCreateStarter => 'Create starter workout';
+
+  @override
+  String get workoutsStarterTitle => 'Essential strength';
+
+  @override
+  String get workoutsStart => 'Start workout';
+
+  @override
+  String workoutsExerciseCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count exercises',
+      one: '1 exercise',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get workoutsInProgress => 'Workout in progress';
+
+  @override
+  String workoutsElapsed(String time) {
+    return 'Started at $time';
+  }
+
+  @override
+  String workoutsSetCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count sets recorded',
+      one: '1 set recorded',
+      zero: 'No sets recorded',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String workoutsRestRemaining(int seconds) {
+    return 'Rest remaining: $seconds seconds';
+  }
+
+  @override
+  String workoutsRecordSet(String exercise) {
+    return 'Record $exercise set';
+  }
+
+  @override
+  String get workoutsFinish => 'Complete workout';
 }

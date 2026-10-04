@@ -14,7 +14,7 @@ import 'package:sqlite3/sqlite3.dart' as sqlite;
 
 const int maxBackupBytes = 256 * 1024 * 1024;
 const int _formatVersion = 1;
-const int _schemaVersion = 1;
+const int _schemaVersion = 2;
 const int _argonMemoryKiB = 19 * 1024;
 const int _argonIterations = 2;
 const int _argonParallelism = 1;
@@ -32,6 +32,9 @@ const List<String> _tableNames = <String>[
   'task_completions',
   'routine_blocks',
   'focus_sessions',
+  'workout_plans',
+  'workout_sessions',
+  'workout_sets',
   'xp_events',
   'app_preferences',
 ];
@@ -106,6 +109,38 @@ const Map<String, List<String>> _tableColumns = <String, List<String>>{
     'started_at',
     'end_at',
     'task_id',
+  ],
+  'workout_plans': <String>[
+    'id',
+    'created_at',
+    'updated_at',
+    'deleted_at',
+    'device_id',
+    'title',
+    'exercises_json',
+  ],
+  'workout_sessions': <String>[
+    'id',
+    'created_at',
+    'updated_at',
+    'deleted_at',
+    'device_id',
+    'plan_id',
+    'started_at',
+    'ended_at',
+  ],
+  'workout_sets': <String>[
+    'id',
+    'created_at',
+    'updated_at',
+    'deleted_at',
+    'device_id',
+    'session_id',
+    'exercise_id',
+    'set_index',
+    'repetitions',
+    'load_kg',
+    'rest_seconds',
   ],
   'xp_events': <String>[
     'id',
@@ -500,6 +535,7 @@ final class BackupService {
               UNION ALL SELECT due_date FROM tasks WHERE due_date IS NOT NULL
               UNION ALL SELECT occurrence_date FROM task_completions
               UNION ALL SELECT logical_date FROM xp_events
+              UNION ALL SELECT date(started_at) FROM workout_sessions
             )
           ''').first;
       final Object? start = periodRow['first_date'];

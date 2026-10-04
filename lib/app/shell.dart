@@ -14,6 +14,8 @@ import 'package:flowstate/features/focus/application/focus_controller.dart';
 import 'package:flowstate/features/focus/presentation/focus_session_sheet.dart';
 import 'package:flowstate/features/evolution/application/evolution_controller.dart';
 import 'package:flowstate/features/evolution/presentation/evolution_page.dart';
+import 'package:flowstate/features/workouts/application/workouts_controller.dart';
+import 'package:flowstate/features/workouts/presentation/workouts_page.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
@@ -24,6 +26,7 @@ class AdaptiveShell extends StatefulWidget {
     required this.planController,
     this.focusController,
     this.evolutionController,
+    this.workoutsController,
     super.key,
   });
 
@@ -32,6 +35,7 @@ class AdaptiveShell extends StatefulWidget {
   final PlanController planController;
   final FocusController? focusController;
   final EvolutionController? evolutionController;
+  final WorkoutsController? workoutsController;
 
   @override
   State<AdaptiveShell> createState() => _AdaptiveShellState();
@@ -59,6 +63,7 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
       Icons.insights_outlined,
     ];
     final EvolutionController? evolutionController = widget.evolutionController;
+    final WorkoutsController? workoutsController = widget.workoutsController;
     final List<Widget> pages = <Widget>[
       TodayPage(
         controller: widget.todayController,
@@ -73,7 +78,9 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
             : (task) => _showFocus(context, taskId: task.id),
       ),
       HabitsPage(controller: widget.habitsController),
-      _ShellPlaceholder(label: labels[3]),
+      workoutsController == null
+          ? _ShellPlaceholder(label: labels[3])
+          : WorkoutsPage(controller: workoutsController),
       evolutionController == null
           ? _ShellPlaceholder(label: labels[4])
           : EvolutionPage(controller: evolutionController),

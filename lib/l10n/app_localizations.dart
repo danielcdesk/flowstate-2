@@ -808,6 +808,360 @@ abstract class AppLocalizations {
   /// In pt_BR, this message translates to:
   /// **'Dom'**
   String get weekdaySun;
+
+  /// No description provided for @planTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Seu plano'**
+  String get planTitle;
+
+  /// No description provided for @planSubtitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Organize o dia sem perder espaço para respirar.'**
+  String get planSubtitle;
+
+  /// No description provided for @planPreviousWeek.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Semana anterior'**
+  String get planPreviousWeek;
+
+  /// No description provided for @planNextWeek.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Próxima semana'**
+  String get planNextWeek;
+
+  /// No description provided for @planTasksTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tarefas do dia'**
+  String get planTasksTitle;
+
+  /// No description provided for @planRoutineTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Rotina'**
+  String get planRoutineTitle;
+
+  /// No description provided for @planFreeSlotsTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Espaços livres'**
+  String get planFreeSlotsTitle;
+
+  /// No description provided for @planUnscheduledTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem data'**
+  String get planUnscheduledTitle;
+
+  /// No description provided for @planTasksEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Um dia aberto'**
+  String get planTasksEmptyTitle;
+
+  /// No description provided for @planTasksEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Adicione uma tarefa ou escolha um horário livre para começar.'**
+  String get planTasksEmptyMessage;
+
+  /// No description provided for @planRoutineEmptyTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sua rotina começa aqui'**
+  String get planRoutineEmptyTitle;
+
+  /// No description provided for @planRoutineEmptyMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Crie blocos recorrentes para dar ritmo à semana.'**
+  String get planRoutineEmptyMessage;
+
+  /// No description provided for @planSlotsEmpty.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não há intervalos de 25 minutos neste período.'**
+  String get planSlotsEmpty;
+
+  /// No description provided for @planCreateTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Criar tarefa'**
+  String get planCreateTask;
+
+  /// No description provided for @planCreateRoutine.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Criar bloco'**
+  String get planCreateRoutine;
+
+  /// No description provided for @planEditTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Editar tarefa'**
+  String get planEditTask;
+
+  /// No description provided for @planEditRoutine.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Editar bloco'**
+  String get planEditRoutine;
+
+  /// No description provided for @planArchiveTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Arquivar tarefa'**
+  String get planArchiveTask;
+
+  /// No description provided for @planArchiveRoutine.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Arquivar bloco'**
+  String get planArchiveRoutine;
+
+  /// No description provided for @planTaskCreateTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Nova tarefa'**
+  String get planTaskCreateTitle;
+
+  /// No description provided for @planRoutineCreateTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Novo bloco de rotina'**
+  String get planRoutineCreateTitle;
+
+  /// No description provided for @planTaskNameLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tarefa'**
+  String get planTaskNameLabel;
+
+  /// No description provided for @planTaskNotesLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Notas (opcional)'**
+  String get planTaskNotesLabel;
+
+  /// No description provided for @planTimeLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Horário'**
+  String get planTimeLabel;
+
+  /// No description provided for @planNoTime.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem horário'**
+  String get planNoTime;
+
+  /// No description provided for @planDurationLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Duração em minutos'**
+  String get planDurationLabel;
+
+  /// No description provided for @planDurationMinutes.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{count, plural, =1 {1 minuto} other {{count} minutos}}'**
+  String planDurationMinutes(int count);
+
+  /// No description provided for @planPriorityLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Prioridade'**
+  String get planPriorityLabel;
+
+  /// No description provided for @planPriorityLow.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Baixa'**
+  String get planPriorityLow;
+
+  /// No description provided for @planPriorityNormal.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Normal'**
+  String get planPriorityNormal;
+
+  /// No description provided for @planPriorityHigh.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Alta'**
+  String get planPriorityHigh;
+
+  /// No description provided for @planRepeatLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Repetição'**
+  String get planRepeatLabel;
+
+  /// No description provided for @planRepeatOnce.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Só neste dia'**
+  String get planRepeatOnce;
+
+  /// No description provided for @planRepeatWeekdays.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Dias escolhidos'**
+  String get planRepeatWeekdays;
+
+  /// No description provided for @planRepeatOn.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Repetir em'**
+  String get planRepeatOn;
+
+  /// No description provided for @planRoutineNameLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Nome do bloco'**
+  String get planRoutineNameLabel;
+
+  /// No description provided for @planRoutineCategoryLabel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Área'**
+  String get planRoutineCategoryLabel;
+
+  /// No description provided for @planCategoryMind.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Mente'**
+  String get planCategoryMind;
+
+  /// No description provided for @planCategoryBody.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Corpo'**
+  String get planCategoryBody;
+
+  /// No description provided for @planCategoryFocus.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Foco'**
+  String get planCategoryFocus;
+
+  /// No description provided for @planSaveTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Salvar tarefa'**
+  String get planSaveTask;
+
+  /// No description provided for @planSaveRoutine.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Salvar bloco'**
+  String get planSaveRoutine;
+
+  /// No description provided for @planCancel.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Cancelar'**
+  String get planCancel;
+
+  /// No description provided for @planConflictTitle.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Há horários sobrepostos'**
+  String get planConflictTitle;
+
+  /// No description provided for @planConflictMessage.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Revise os itens que acontecem ao mesmo tempo.'**
+  String get planConflictMessage;
+
+  /// No description provided for @planConflictPair.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'{first} ↔ {second}'**
+  String planConflictPair(String first, String second);
+
+  /// No description provided for @planRemoveTime.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Remover horário'**
+  String get planRemoveTime;
+
+  /// No description provided for @planSuggestedSlot.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Livre às {time}'**
+  String planSuggestedSlot(String time);
+
+  /// No description provided for @planScheduleTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Agendar tarefa'**
+  String get planScheduleTask;
+
+  /// No description provided for @planCompleteTask.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Concluir tarefa'**
+  String get planCompleteTask;
+
+  /// No description provided for @planTaskCompleted.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tarefa concluída. Seu progresso foi atualizado.'**
+  String get planTaskCompleted;
+
+  /// No description provided for @planTaskArchived.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tarefa arquivada. Seu histórico foi preservado.'**
+  String get planTaskArchived;
+
+  /// No description provided for @planRoutineArchived.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Bloco arquivado.'**
+  String get planRoutineArchived;
+
+  /// No description provided for @planLoading.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Carregando seu plano'**
+  String get planLoading;
+
+  /// No description provided for @planLoadError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível carregar seu plano. Seus dados continuam neste aparelho.'**
+  String get planLoadError;
+
+  /// No description provided for @planSaveError.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Não foi possível salvar. Seus dados continuam neste aparelho.'**
+  String get planSaveError;
+
+  /// No description provided for @planRetry.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Tentar novamente'**
+  String get planRetry;
+
+  /// No description provided for @planTaskNoDate.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Sem data definida'**
+  String get planTaskNoDate;
+
+  /// No description provided for @planPrioritySemantics.
+  ///
+  /// In pt_BR, this message translates to:
+  /// **'Prioridade {priority}'**
+  String planPrioritySemantics(String priority);
 }
 
 class _AppLocalizationsDelegate

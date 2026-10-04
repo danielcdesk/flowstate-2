@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flowstate/app/shell.dart';
+import 'package:flowstate/core/local_date.dart';
 import 'package:flowstate/data/repositories/drift_repositories.dart';
 import 'package:flowstate/design/theme.dart';
 import 'package:flowstate/domain/habits/habit.dart';
 import 'package:flowstate/domain/recurrence/recurrence.dart';
 import 'package:flowstate/features/habits/presentation/habits_page.dart';
+import 'package:flowstate/features/plan/presentation/plan_page.dart';
+import 'package:flowstate/domain/tasks/task.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
 import '../fixtures/domain_fixtures.dart';
@@ -111,6 +114,53 @@ void main() {
       matchesGoldenFile('goldens/habits-compact-light-text-200.png'),
     );
   }, skip: Platform.isWindows);
+
+  testWidgets('Plan compact light golden', (WidgetTester tester) async {
+    await _pumpPlan(tester, _compactViewport, FlowTheme.light());
+    await expectLater(
+      find.byType(PlanPage),
+      matchesGoldenFile('goldens/plan-compact-light.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Plan compact dark golden', (WidgetTester tester) async {
+    await _pumpPlan(tester, _compactViewport, FlowTheme.dark());
+    await expectLater(
+      find.byType(PlanPage),
+      matchesGoldenFile('goldens/plan-compact-dark.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Plan expanded light golden', (WidgetTester tester) async {
+    await _pumpPlan(tester, _expandedViewport, FlowTheme.light());
+    await expectLater(
+      find.byType(PlanPage),
+      matchesGoldenFile('goldens/plan-expanded-light.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Plan expanded dark golden', (WidgetTester tester) async {
+    await _pumpPlan(tester, _expandedViewport, FlowTheme.dark());
+    await expectLater(
+      find.byType(PlanPage),
+      matchesGoldenFile('goldens/plan-expanded-dark.png'),
+    );
+  }, skip: Platform.isWindows);
+
+  testWidgets('Plan compact light at 200 percent text', (
+    WidgetTester tester,
+  ) async {
+    await _pumpPlan(
+      tester,
+      _compactViewport,
+      FlowTheme.light(),
+      textScaleFactor: 2,
+    );
+    await expectLater(
+      find.byType(PlanPage),
+      matchesGoldenFile('goldens/plan-compact-light-text-200.png'),
+    );
+  }, skip: Platform.isWindows);
 }
 
 Future<void> _pumpFlow(
@@ -140,6 +190,7 @@ Future<void> _pumpFlow(
             child: AdaptiveShell(
               todayController: fixture.controller,
               habitsController: fixture.habitsController,
+              planController: fixture.planController,
             ),
           );
         },
@@ -206,6 +257,57 @@ Future<void> _pumpHabits(
           child: Scaffold(
             body: HabitsPage(controller: fixture.habitsController),
           ),
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
+Future<void> _pumpPlan(
+  WidgetTester tester,
+  Size viewport,
+  ThemeData theme, {
+  double textScaleFactor = 1,
+}) async {
+  tester.view
+    ..physicalSize = viewport
+    ..devicePixelRatio = 1;
+  addTearDown(tester.view.reset);
+  final fixture = createTodayControllerFixture();
+  addTearDown(fixture.dispose);
+  final LocalDate date = LocalDate(2026, 9, 30);
+  await DriftTaskRepository(fixture.database).saveTask(
+    Task(
+      metadata: testMetadata(901),
+      title: 'Revisar prioridades',
+      dueDate: date,
+      dueMinute: 600,
+      estimatedMinutes: 45,
+      priority: TaskPriority.high,
+    ),
+  );
+  await DriftRoutineRepository(fixture.database).saveBlock(
+    testBlock(
+      id: 902,
+      title: 'Pausa para caminhar',
+      startMinute: 720,
+      durationMinutes: 30,
+      weekdays: <int>{date.weekday},
+    ),
+  );
+  await fixture.planController.load(date: date);
+  await tester.pumpWidget(
+    MaterialApp(
+      theme: theme,
+      locale: const Locale('pt', 'BR'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Builder(
+        builder: (BuildContext context) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScaleFactor)),
+          child: Scaffold(body: PlanPage(controller: fixture.planController)),
         ),
       ),
     ),

@@ -11,6 +11,7 @@ import 'package:flowstate/design/theme.dart';
 import 'package:flowstate/app/shell.dart';
 import 'package:flowstate/features/today/application/today_controller.dart';
 import 'package:flowstate/features/habits/application/habits_controller.dart';
+import 'package:flowstate/features/plan/application/plan_controller.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 
 class FlowStateApp extends StatefulWidget {
@@ -40,11 +41,20 @@ class _FlowStateAppState extends State<FlowStateApp> {
     deviceId: _deviceId,
     onDataChanged: _todayController.load,
   );
+  late final PlanController _planController = PlanController(
+    taskRepository: DriftTaskRepository(_database),
+    routineRepository: DriftRoutineRepository(_database),
+    xpRepository: DriftXpRepository(_database),
+    clock: Clock(),
+    deviceId: _deviceId,
+    onDataChanged: _todayController.load,
+  );
 
   @override
   void dispose() {
     _todayController.dispose();
     _habitsController.dispose();
+    _planController.dispose();
     unawaited(_database.close());
     super.dispose();
   }
@@ -61,6 +71,7 @@ class _FlowStateAppState extends State<FlowStateApp> {
       home: AdaptiveShell(
         todayController: _todayController,
         habitsController: _habitsController,
+        planController: _planController,
       ),
     );
   }

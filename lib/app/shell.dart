@@ -8,6 +8,8 @@ import 'package:flowstate/features/today/presentation/today_page.dart';
 import 'package:flowstate/features/today/application/today_controller.dart';
 import 'package:flowstate/features/habits/application/habits_controller.dart';
 import 'package:flowstate/features/habits/presentation/habits_page.dart';
+import 'package:flowstate/features/plan/application/plan_controller.dart';
+import 'package:flowstate/features/plan/presentation/plan_page.dart';
 import 'package:flowstate/l10n/app_localizations.dart';
 import 'package:flowstate/l10n/app_localizations_pt.dart';
 
@@ -15,11 +17,13 @@ class AdaptiveShell extends StatefulWidget {
   const AdaptiveShell({
     required this.todayController,
     required this.habitsController,
+    required this.planController,
     super.key,
   });
 
   final TodayController todayController;
   final HabitsController habitsController;
+  final PlanController planController;
 
   @override
   State<AdaptiveShell> createState() => _AdaptiveShellState();
@@ -48,7 +52,7 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
     ];
     final List<Widget> pages = <Widget>[
       TodayPage(controller: widget.todayController),
-      _ShellPlaceholder(label: labels[1]),
+      PlanPage(controller: widget.planController),
       HabitsPage(controller: widget.habitsController),
       _ShellPlaceholder(label: labels[3]),
       _ShellPlaceholder(label: labels[4]),

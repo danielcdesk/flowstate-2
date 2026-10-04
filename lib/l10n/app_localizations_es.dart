@@ -404,4 +404,202 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get weekdaySun => 'Dom';
+
+  @override
+  String get planTitle => 'Tu plan';
+
+  @override
+  String get planSubtitle => 'Organiza el día y deja espacio para respirar.';
+
+  @override
+  String get planPreviousWeek => 'Semana anterior';
+
+  @override
+  String get planNextWeek => 'Próxima semana';
+
+  @override
+  String get planTasksTitle => 'Tareas del día';
+
+  @override
+  String get planRoutineTitle => 'Rutina';
+
+  @override
+  String get planFreeSlotsTitle => 'Tiempo libre';
+
+  @override
+  String get planUnscheduledTitle => 'Sin fecha';
+
+  @override
+  String get planTasksEmptyTitle => 'Un día abierto';
+
+  @override
+  String get planTasksEmptyMessage =>
+      'Añade una tarea o elige un horario libre para empezar.';
+
+  @override
+  String get planRoutineEmptyTitle => 'Tu rutina empieza aquí';
+
+  @override
+  String get planRoutineEmptyMessage =>
+      'Crea bloques recurrentes para dar ritmo a la semana.';
+
+  @override
+  String get planSlotsEmpty =>
+      'No hay intervalos de 25 minutos en este horario.';
+
+  @override
+  String get planCreateTask => 'Crear tarea';
+
+  @override
+  String get planCreateRoutine => 'Crear bloque';
+
+  @override
+  String get planEditTask => 'Editar tarea';
+
+  @override
+  String get planEditRoutine => 'Editar bloque';
+
+  @override
+  String get planArchiveTask => 'Archivar tarea';
+
+  @override
+  String get planArchiveRoutine => 'Archivar bloque';
+
+  @override
+  String get planTaskCreateTitle => 'Nueva tarea';
+
+  @override
+  String get planRoutineCreateTitle => 'Nuevo bloque de rutina';
+
+  @override
+  String get planTaskNameLabel => 'Tarea';
+
+  @override
+  String get planTaskNotesLabel => 'Notas (opcional)';
+
+  @override
+  String get planTimeLabel => 'Horario';
+
+  @override
+  String get planNoTime => 'Sin horario';
+
+  @override
+  String get planDurationLabel => 'Duración en minutos';
+
+  @override
+  String planDurationMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minutos',
+      one: '1 minuto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planPriorityLabel => 'Prioridad';
+
+  @override
+  String get planPriorityLow => 'Baja';
+
+  @override
+  String get planPriorityNormal => 'Normal';
+
+  @override
+  String get planPriorityHigh => 'Alta';
+
+  @override
+  String get planRepeatLabel => 'Repetición';
+
+  @override
+  String get planRepeatOnce => 'Solo este día';
+
+  @override
+  String get planRepeatWeekdays => 'Días elegidos';
+
+  @override
+  String get planRepeatOn => 'Repetir los días';
+
+  @override
+  String get planRoutineNameLabel => 'Nombre del bloque';
+
+  @override
+  String get planRoutineCategoryLabel => 'Área';
+
+  @override
+  String get planCategoryMind => 'Mente';
+
+  @override
+  String get planCategoryBody => 'Cuerpo';
+
+  @override
+  String get planCategoryFocus => 'Enfoque';
+
+  @override
+  String get planSaveTask => 'Guardar tarea';
+
+  @override
+  String get planSaveRoutine => 'Guardar bloque';
+
+  @override
+  String get planCancel => 'Cancelar';
+
+  @override
+  String get planConflictTitle => 'Hay horarios superpuestos';
+
+  @override
+  String get planConflictMessage =>
+      'Revisa los elementos que ocurren al mismo tiempo.';
+
+  @override
+  String planConflictPair(String first, String second) {
+    return '$first ↔ $second';
+  }
+
+  @override
+  String get planRemoveTime => 'Quitar horario';
+
+  @override
+  String planSuggestedSlot(String time) {
+    return 'Libre a las $time';
+  }
+
+  @override
+  String get planScheduleTask => 'Programar tarea';
+
+  @override
+  String get planCompleteTask => 'Completar tarea';
+
+  @override
+  String get planTaskCompleted =>
+      'Tarea completada. Tu progreso se ha actualizado.';
+
+  @override
+  String get planTaskArchived => 'Tarea archivada. Se conservó su historial.';
+
+  @override
+  String get planRoutineArchived => 'Bloque archivado.';
+
+  @override
+  String get planLoading => 'Cargando tu plan';
+
+  @override
+  String get planLoadError =>
+      'No se pudo cargar tu plan. Tus datos siguen en este dispositivo.';
+
+  @override
+  String get planSaveError =>
+      'No se pudo guardar. Tus datos siguen en este dispositivo.';
+
+  @override
+  String get planRetry => 'Intentar de nuevo';
+
+  @override
+  String get planTaskNoDate => 'Sin fecha definida';
+
+  @override
+  String planPrioritySemantics(String priority) {
+    return 'Prioridad $priority';
+  }
 }

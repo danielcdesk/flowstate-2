@@ -20,6 +20,12 @@ abstract final class FlowTokens {
   static const double habitHeaderStackWidth = 420;
   static const double accessibilityLargeTextScale = 1.4;
   static const EdgeInsets habitRowPadding = EdgeInsets.only(bottom: space2);
+  static const EdgeInsets planWeekdayPadding = EdgeInsets.symmetric(
+    horizontal: space2,
+  );
+  static const EdgeInsets planWeekdayButtonPadding = EdgeInsets.symmetric(
+    vertical: space2,
+  );
   static const EdgeInsets habitDetailPadding = EdgeInsets.fromLTRB(
     space4,
     0,

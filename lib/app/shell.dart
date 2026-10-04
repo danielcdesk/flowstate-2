@@ -4,6 +4,7 @@ import 'package:flowstate/design/components/app_bottom_nav.dart';
 import 'package:flowstate/design/components/empty_state.dart';
 import 'package:flowstate/design/components/sidebar_nav.dart';
 import 'package:flowstate/design/tokens.dart';
+import 'package:flowstate/core/app_constants.dart';
 import 'package:flowstate/features/today/presentation/today_page.dart';
 import 'package:flowstate/features/today/application/today_controller.dart';
 import 'package:flowstate/features/habits/application/habits_controller.dart';
@@ -95,6 +96,7 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
     final List<Widget> pages = <Widget>[
       TodayPage(
         controller: widget.todayController,
+        evolutionController: evolutionController,
         onStartFocus: widget.focusController == null
             ? null
             : () => _showFocus(context),
@@ -161,6 +163,11 @@ class _AdaptiveShellState extends State<AdaptiveShell> {
                   currentIndex: selectedIndex,
                   onDestinationSelected: _select,
                   destinations: railDestinations,
+                  brandLabel: AppConstants.appName,
+                  settingsLabel: localizations.onboardingSettings,
+                  onSettingsPressed: onboardingController == null
+                      ? null
+                      : () => _showOnboarding(context),
                 ),
                 Expanded(child: content),
               ],

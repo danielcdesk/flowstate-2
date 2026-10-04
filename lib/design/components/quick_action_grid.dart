@@ -29,7 +29,7 @@ class QuickActionGrid extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: columns,
-            mainAxisExtent: 92,
+            mainAxisExtent: FlowTokens.quickActionExtent,
             crossAxisSpacing: FlowTokens.space3,
             mainAxisSpacing: FlowTokens.space3,
           ),
@@ -47,9 +47,31 @@ class QuickActionGrid extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(action.icon, size: FlowTokens.tapTarget / 2),
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary
+                              .withValues(alpha: 0.12),
+                          shape: BoxShape.circle,
+                        ),
+                        child: SizedBox(
+                          width: FlowTokens.quickActionIconSize,
+                          height: FlowTokens.quickActionIconSize,
+                          child: Icon(
+                            action.icon,
+                            size: FlowTokens.iconSmall + FlowTokens.space2,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                      ),
                       const SizedBox(height: FlowTokens.space2),
-                      Text(action.label, textAlign: TextAlign.center),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          action.label,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                      ),
                     ],
                   ),
                 ),

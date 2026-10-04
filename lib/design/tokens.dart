@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
 
 abstract final class FlowTokens {
+  static const double space1 = 4;
   static const double space2 = 8;
   static const double space3 = 12;
   static const double space4 = 16;
   static const double space6 = 24;
   static const double space8 = 32;
   static const double radiusMedium = 16;
+  static const double radiusLarge = 22;
+  static const double radiusSmall = 12;
   static const double radarSize = 280;
   static const double catalogMaxWidth = 720;
   static const double contentMaxWidth = 1100;
   static const double tapTarget = 56;
+  static const double sidebarWidth = 228;
+  static const double dashboardGap = 14;
+  static const double dashboardHeaderHeight = 72;
+  static const double wideDashboardBreakpoint = 1040;
+  static const double progressHeight = 8;
+  static const double quickActionExtent = 92;
+  static const double quickActionIconSize = 48;
+  static const double avatarSize = 38;
+  static const double heroRingSize = 118;
   static const double iconSmall = 20;
   static const double progressThickness = 6;
   static const double heatmapCellSize = 14;
@@ -43,10 +55,15 @@ abstract final class FlowTokens {
   static const double compactBreakpoint = 600;
   static const double expandedBreakpoint = 840;
 
-  static const Color canvasDark = Color(0xFF101210);
-  static const Color surfaceDark = Color(0xFF171A17);
-  static const Color canvasLight = Color(0xFFF4F5F2);
+  static const Color canvasDark = Color(0xFF07131D);
+  static const Color surfaceDark = Color(0xFF0E1D2A);
+  static const Color surfaceDarkRaised = Color(0xFF122638);
+  static const Color canvasLight = Color(0xFFF5F7FA);
   static const Color surfaceLight = Color(0xFFFFFFFF);
+  static const Color accentBlue = Color(0xFF49B4FF);
+  static const Color accentBlueDark = Color(0xFF0878C9);
+  static const Color accentPurple = Color(0xFFB58AFF);
+  static const Color accentCoral = Color(0xFFFF775C);
   static const Color accentLime = Color(0xFFD6FF59);
   static const Color textDark = Color(0xFF101210);
   static const Color textLight = Color(0xFFF4F5F2);
@@ -54,4 +71,21 @@ abstract final class FlowTokens {
   static const EdgeInsets pagePadding = EdgeInsets.all(space6);
   static const EdgeInsets cardPadding = EdgeInsets.all(space6);
   static const EdgeInsets sectionPadding = EdgeInsets.all(space4);
+  static const EdgeInsets dashboardPadding = EdgeInsets.fromLTRB(
+    space6,
+    space4,
+    space6,
+    space8,
+  );
+  static const EdgeInsets compactPagePadding = EdgeInsets.fromLTRB(
+    space4,
+    space3,
+    space4,
+    space6,
+  );
+  static const EdgeInsets dateControlPadding = EdgeInsets.symmetric(
+    horizontal: space3,
+    vertical: space2,
+  );
+  static const EdgeInsets skillMeterPadding = EdgeInsets.only(bottom: space3);
 }
